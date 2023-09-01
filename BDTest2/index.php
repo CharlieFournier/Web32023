@@ -38,12 +38,15 @@
     ?>
         <table class="table table-dark">
             <thead>
+
                 <tr>
                     <th scope="col">id</th>
                     <th scope="col">prenom</th>
                     <th scope="col">nom</th>
                     <th scope="col">mdp</th>
                     <th scope="col">urlImage</th>
+                    <th></th>
+                    <th></th>                    
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +60,9 @@
                         <td><?php echo $row["nom"] ?></td>
                         <td><?php echo $row["mdp"] ?></td>
                         <td><img src="<?php echo $row["urlImage"] ?>"></td>
+                        <td><a class="btn btn-info" role="button" href="modifier.php?id=<?php echo $row["id"] ?>"> Modifier </td>
+                        <td><a class="btn btn-info" role="button" href="delete.php?id=<?php echo $row["id"] ?>"> Delete </td>
+                        
                     </tr>
 
                 <?php
@@ -71,7 +77,8 @@
             $conn->close();
                 ?>
 
-<a href="ajouter.php" class="btn btn-info" role="button">Link Button</a>
+<a href="ajouter.php" class="btn btn-info" role="button">Ajouter</a>
+<a href="delete.php" class="btn btn-info" role="button">Delete</a>
 
 </body>
 
