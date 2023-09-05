@@ -11,23 +11,46 @@
 </head>
 
 <body>
-
     <?php
+
+    if (isset($_GET['action'])) {
+        $action = $_GET['action'];
+
+        if($action == "ajouter") {
+            ?>
+            <div class="alert alert-primary" role="alert">
+            ajout fait correctement
+            </div>
+            <?php
+            }
+
+            else if($action == "modifier") {
+                ?>
+                <div class="alert alert-primary" role="alert">
+                modification fait correctement
+                </div>
+                <?php
+                }
+
+            else if($action == "delete") {
+                ?>
+                <div class="alert alert-primary" role="alert">
+                suppression fait correctement
+                </div>
+                <?php
+                }
+    }
+
+
+
+
     $servername = "localhost";
     $username = "root";
     $password = "root";
     $db = "meow";
-    // create connection
+
     $conn = new mysqli($servername, $username, $password, $db);
-    //check connection
 
-    /*
-    if (!$conn) {
-        die("Connection failed: " . $mysqli_connect_error());
-    }
-
-    $sql = "INSERT INTO meow (prenom, nom, mdp, urlImage)
-    VALUES ('test1','bleuet','01')";            */
 
     $sql = "SELECT * FROM meow";
 
@@ -78,7 +101,6 @@
                 ?>
 
 <a href="ajouter.php" class="btn btn-info" role="button">Ajouter</a>
-<a href="delete.php" class="btn btn-info" role="button">Delete</a>
 
 </body>
 

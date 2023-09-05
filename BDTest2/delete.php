@@ -28,7 +28,7 @@ $servername = "localhost";
 
         if($conn->query($sql) === TRUE) {
             echo "mise a jour effectuer correctement";
-            header('Location: http://localhost/Web32023/BDTest2/index.php');
+            header('Location: http://localhost/Web32023/BDTest2/index.php?action=delete');
         } else {
             echo "erreur dans la mise a jour". $conn->error;
         }

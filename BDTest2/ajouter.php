@@ -10,9 +10,19 @@
 </head>
 
 <body>
-    <?php
+
+<?php
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $db = "meow";
+    // create connection
+    $conn = new mysqli($servername, $username, $password, $db);
+
+
     //On crée les variables du formulaire vide
-    $prenom = $nom = $mdp = $avatar = "";
+    $prenom = $nom = $mdp = $url = $action = "";
 
     //On crée les variables d'erreurs vides
     $nomErreur = "";
@@ -46,52 +56,35 @@
             $mdp = test_input($_POST["mdp"]);
         }
 
-        if (empty($_POST['avatar'])) {
-            $nomErreur = "L'avatar est requis";
+        if (empty($_POST['url'])) {
+            $nomErreur = "L'url est requis";
             $erreur = true;
         } else {
-            $avatar = test_input($_POST["avatar"]);
+            $url = test_input($_POST["url"]);
         }
 //---------------------------------------------------------------------------//
         if ($erreur == false) {
 
-        if (!$conn) {
-        die("Connection failed: " . $mysqli_connect_error());
-    }
+          $sql = "INSERT INTO `meow` SET `prenom` = '$prenom', `nom` = '$nom', `mdp` = '$mdp', `urlImage` = '$url'";      
 
-    $sql = "INSERT INTO meow (prenom, nom, mdp, urlImage)
-    VALUES ('$prenom','$nom','$mdp', '$avatar')";            
+          if($conn->query($sql) === TRUE) {
+
+            echo "mise a jour effectuer correctement";
+            $action = "ajouter";
+            header('Location: http://localhost/Web32023/BDTest2/index.php?action=ajouter');
+        } else {
+            echo "erreur dans la mise a jour". $conn->error;
+        }
+
+    if (!$conn) {
+    die("Connection failed: " . $mysqli_connect_error());
+}
+        }
+
+
 //---------------------------------------------------------------------------//
 
-    ?>
-
-            <div class="container align-items-center">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header text-center ">
-                                <h1> <?php echo $prenom ?> </h1>
-                            </div>
-
-                            <div class="card-body">
-                                <div class="align-items-center text-center">
-                                    <img src="<?php echo $avatar ?>">
-                                </div>
-                                <hr>
-
-                                <h1> <?php echo $nom ?> </h1>
-                                <h1> <?php echo $mdp ?> </h1>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-        <?php
-        }
+        
 
         // Inserer dans la base de données
         //SI erreurs, on réaffiche le formulaire 
@@ -135,8 +128,8 @@
                 <div class="col-md-4"> </div>
 
                 <div class="col-md-4">
-                    <label for="validationServer01" class="form-label">Avatar</label>
-                    <input type="text" class="form-control is-valid" id="validationServer01" value="opera.png" name="avatar" required>
+                    <label for="validationServer01" class="form-label">url</label>
+                    <input type="text" class="form-control is-valid" id="validationServer01" value="citron.jpg" name="url" required>
 
                 </div>
 
