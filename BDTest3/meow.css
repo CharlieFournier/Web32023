@@ -1,0 +1,12 @@
+body {
+    height: 100%;
+}
+
+#btnAjout {
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+#lienAjout {
+    padding: 0px;
+}
