@@ -12,6 +12,8 @@ session_start();
     <title></title>
 </head>
 <body>
+    <div class="container-fluid h-100" id="test">
+        <div class="row h-100">
     <?php
 
     $nom = $image = "";
@@ -38,6 +40,19 @@ session_start();
         // Inserer dans la base de données
         //SI erreurs, on réaffiche le formulaire 
     }
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $db = "meow";
+
+    $conn = new mysqli($servername, $username, $password, $db);
+
+
+    $sql = "SELECT * FROM users";
+
+    $result = $conn->query($sql);
+
     if($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
 
 
@@ -46,11 +61,12 @@ session_start();
             <thead>
 
                 <tr>
-                    <th scope="col">Id</th>
                     <th scope="col">User</th>
                     <th scope="col">Mdp</th>
                     <th scope="col">Email</th>
-                    <th scope="col">IP</th>                 
+                    <th scope="col">IP</th>    
+                    <th></th>  
+                    <!--<th></th>          --> 
                 </tr>
             </thead>
             <tbody>
@@ -59,19 +75,18 @@ session_start();
                 ?>
 
                     <tr>
-                        <th scope="row"><?php echo $row["id"] ?></th>
-                        <td><?php echo $row["User"] ?></td>
+                        <td><?php echo $row["user"] ?></td>
                         <td><?php echo $row["password"] ?></td>
-                        <td><?php echo $row["mdp"] ?></td>
-                        <td><img src="<?php echo $row["urlImage"] ?>"></td>
-                        <td><a class="btn btn-info" role="button" href="modifier.php?id=<?php echo $row["id"] ?>"> Modifier </td>
-                        <td><a class="btn btn-info" role="button" href="delete.php?id=<?php echo $row["id"] ?>"> Delete </td>
+                        <td><?php echo $row["email"] ?></td>
+                        <td><?php echo $row["ip"] ?></td>
+                        <td><a class="btn btn-info" role="button" href="modifier.php?id=<?php echo $row["id"] ?>">Modifier </td>
                         
                     </tr>
-                    <?PHP
+                    <?php
         }
     }
-?>
+
+
     function test_input($data){
         $data = trim($data);
         $data = addslashes($data);
@@ -80,7 +95,10 @@ session_start();
     }
 
     ?>
-
-    
+</div>
+</div>
 </body>
 </html>
+
+<!--<td><a class="btn btn-info" role="button" href="modifier.php?id=< echo $row["id"] ?>"> Modifier </td>
+                        <td><a class="btn btn-info" role="button" href="delete.php?id=< echo $row["id"] ?>"> Delete </td> -->

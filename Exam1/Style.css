@@ -1,7 +1,13 @@
-body {
+body,html {
     height: 100%;
     width: 100%;
 }
+
+#test {
+    background-color: black;
+}
+
+
 
 #btnConnexion {
     border-radius: 4px;
