@@ -44,21 +44,20 @@ session_start();
 
         $result = $conn->query($sql);
 
-        /*if (isset($result)) {
+        if (isset($result)) {
 
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
-                echo "<h1>Connectés</h1>";
                 $_SESSION["connexion"]  = true;
             } else {
-                //echo "<h2 style='color:red';>Nom d'usager ou mot de passe incorrect</h2>";                                    IMPORTANT
-                //$erreur = true;
+                echo "<h2 style='color:red';>Nom d'usager ou mot de passe incorrect</h2>";                                  #  IMPORTANT
+                $erreur = true;
             }
         }
         else {
-            //echo "<h2 style='color:red';>Nom d'usager ou mot de passe incorrect</h2>";                                        IMPORTANT
-            //$erreur = true;
-        } */
+            echo "<h2 style='color:red';>Nom d'usager ou mot de passe incorrect</h2>";                                      #  IMPORTANT
+            $erreur = true;
+        } 
         $conn->close();
     }
 
@@ -73,43 +72,19 @@ session_start();
             $user = test_input($_POST["user"]);
         }
         //------------------------------------------------
-        /*
-        if(empty($_POST['email'])){
-            $nomErreur = "User ou mot de passe incorrect";
-            $erreur = true;
-        }
-        else{
-            $email = test_input($_POST["email"]); 
-        }                                       */
-        //------------------------------------------------
         if (empty($_POST['password'])) {
             $nomErreur = "User ou mot de passe incorrect";
             $erreur = true;
         } else {
             $password = test_input($_POST["password"]);
         }
-
+        //------------------------------------------------
         if ($erreur == false) {
             ?>
             <div class="container-fluid align-items-center text-center h100">
             <div class="row h30">
-            <div class="col-6"><a href="Connexion.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">AjoutEvents</button></a></div>
-            <div class="col-6"><a href="Connexion.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">AjoutUser</button></a></div>
-            </div>
-            <div class="row h30">
-            <div class="col-6"><a href="Connexion.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">ModifEvents</button></a></div>
-            <div class="col-6"><a href="Connexion.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">ModifUser</button></a></div>
-            </div>
-            <div class="row h30">
-            <div class="col-6"><a href="Connexion.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">DeleteEvents</button></a></div>
-            <div class="col-6"><a href="Connexion.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">DeleteUser</button></a></div>
-            </div>
-            
-            
-           
-            
-            
-
+            <div class="col-6"><a href="PageUser.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Options User</button></a></div>
+            <div class="col-6"><a href="PageEvents.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Options </button></a></div>
             </div>
             <?php
         }
