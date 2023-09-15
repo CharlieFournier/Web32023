@@ -41,19 +41,37 @@ session_start();
     if($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
 
 
-    ?>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-            Nom : <input type="text" name="nom" size="25" maxlength="15"><br>
-            <span style="color:red";><?php echo $nomErreur;?></span><br><br>
-            
-            Image : <input type="text" name="image" value="<?php echo $image; ?>"><br>
+        ?>
+        <table class="table table-dark">
+            <thead>
 
-            <input type="submit">
-        </form>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Mdp</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">IP</th>                 
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                while ($row = $result->fetch_assoc()) {
+                ?>
 
-    <?php
+                    <tr>
+                        <th scope="row"><?php echo $row["id"] ?></th>
+                        <td><?php echo $row["User"] ?></td>
+                        <td><?php echo $row["password"] ?></td>
+                        <td><?php echo $row["mdp"] ?></td>
+                        <td><img src="<?php echo $row["urlImage"] ?>"></td>
+                        <td><a class="btn btn-info" role="button" href="modifier.php?id=<?php echo $row["id"] ?>"> Modifier </td>
+                        <td><a class="btn btn-info" role="button" href="delete.php?id=<?php echo $row["id"] ?>"> Delete </td>
+                        
+                    </tr>
+                    <?PHP
+        }
     }
-
+?>
     function test_input($data){
         $data = trim($data);
         $data = addslashes($data);
