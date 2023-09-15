@@ -84,7 +84,7 @@ session_start();
             <div class="container-fluid align-items-center text-center h100">
             <div class="row h30">
             <div class="col-6"><a href="PageUser.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Options User</button></a></div>
-            <div class="col-6"><a href="PageEvents.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Options </button></a></div>
+            <div class="col-6"><a href="PageEvents.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Options Events</button></a></div>
             </div>
             <?php
         }
