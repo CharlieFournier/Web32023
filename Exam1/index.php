@@ -43,7 +43,35 @@ session_start();
     <a href="Connexion.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Connexion</button></a>
 
     <a href="Connexion.php" class="btn" role="button" id="lienAjout"><img src=""></a>
-    
+
+<div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-4">
+
+                    <a href="pageUser.php"><img src="rage2.png"></a>
+
+ 
+
+                </div>
+
+                <div class="col-4">
+
+                    <a><img src="neutre2.png"></a>
+
+                </div>
+
+                <div class="col-4">
+
+                    <a><img src="yes2.png"></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
 
     <?php
     }
