@@ -52,7 +52,7 @@ session_start();
 
                     <a href="pageUser.php"><img src="rage2.png"></a>
 
-                    accueil
+                    
 
                 </div>
 
