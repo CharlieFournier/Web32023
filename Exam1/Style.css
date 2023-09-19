@@ -4,7 +4,7 @@ body,html {
 }
 
 #test {
-    background-color: black;
+    background-color: #212529;
 }
 
 
@@ -18,5 +18,9 @@ body,html {
 
 .h30 {
     height: 33.3%;
+}
+
+.p-0 {
+    padding:0px;
 }
 

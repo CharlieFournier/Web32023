@@ -12,6 +12,8 @@ session_start();
     <title></title>
 </head>
 <body>
+    <div class="container-fluid h-100" id="test">
+        <div class="row h-100">
     <?php
 
     $nom = $image = "";
@@ -38,21 +40,55 @@ session_start();
         // Inserer dans la base de données
         //SI erreurs, on réaffiche le formulaire 
     }
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $db = "meow";
+
+    $conn = new mysqli($servername, $username, $password, $db);
+
+
+    $sql = "SELECT * FROM users";
+
+    $result = $conn->query($sql);
+
     if($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
 
 
-    ?>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-            Nom : <input type="text" name="nom" size="25" maxlength="15"><br>
-            <span style="color:red";><?php echo $nomErreur;?></span><br><br>
-            
-            Image : <input type="text" name="image" value="<?php echo $image; ?>"><br>
+        ?>
+        <div class="p-0">
+        <table class="table table-dark">
+            <thead>
 
-            <input type="submit">
-        </form>
+                <tr>
+                    <th scope="col">User</th>
+                    <th scope="col">Mdp</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">IP</th>    
+                    <th></th>  
+                    <!--<th></th>          --> 
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                while ($row = $result->fetch_assoc()) {
+                ?>
 
-    <?php
+                    <tr>
+                        <td><?php echo $row["user"] ?></td>
+                        <td><?php echo $row["password"] ?></td>
+                        <td><?php echo $row["email"] ?></td>
+                        <td><?php echo $row["ip"] ?></td>
+                        <td><a class="btn btn-info" role="button" href="modifier.php?id=<?php echo $row["id"] ?>">Modifier </td>
+                        
+                    </tr>
+
+                </div>
+                    <?php
+        }
     }
+
 
     function test_input($data){
         $data = trim($data);
@@ -62,7 +98,7 @@ session_start();
     }
 
     ?>
-
-    
+</div>
+</div>
 </body>
 </html>

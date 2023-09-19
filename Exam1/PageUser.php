@@ -57,6 +57,7 @@ session_start();
 
 
         ?>
+        <div class="p-0">
         <table class="table table-dark">
             <thead>
 
@@ -82,6 +83,8 @@ session_start();
                         <td><a class="btn btn-info" role="button" href="modifier.php?id=<?php echo $row["id"] ?>">Modifier </td>
                         
                     </tr>
+
+                </div>
                     <?php
         }
     }

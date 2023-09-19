@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Structure de la table `user`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `user` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `users` (
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `user`, `email`, `password`, `ip`, `machine`) VALUES
+INSERT INTO `user` (`id`, `user`, `email`, `password`, `ip`, `machine`) VALUES
 (1, 'Meow', 'Meow@hotmail.com', 'a3a73b6dfa8f4caedd0349f676ae46b39bdb7fbd', '206.167.140.192', ''),
 (2, 'Koguwo', 'quentin.lony@gmail.com', '6c44b78ae02b06bb9755df0e8a415e38d562fb24', '10.102.128.163', '');
 
@@ -50,7 +50,7 @@ INSERT INTO `users` (`id`, `user`, `email`, `password`, `ip`, `machine`) VALUES
 --
 -- Index pour la table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `user` (`user`),
   ADD UNIQUE KEY `email` (`email`);
@@ -62,7 +62,7 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT pour la table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
