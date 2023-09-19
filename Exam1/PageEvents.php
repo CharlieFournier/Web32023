@@ -49,7 +49,7 @@ session_start();
     $conn = new mysqli($servername, $username, $password, $db);
 
 
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT * FROM evenement";
 
     $result = $conn->query($sql);
 
@@ -62,12 +62,12 @@ session_start();
             <thead>
 
                 <tr>
-                    <th scope="col">User</th>
-                    <th scope="col">Mdp</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">IP</th>    
+                <th scope="col">id</th>
+                    <th scope="col">NomEvent</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Lieu</th>
+                    <th scope="col">Département</th>    
                     <th></th>  
-                    <!--<th></th>          --> 
                 </tr>
             </thead>
             <tbody>
@@ -76,10 +76,11 @@ session_start();
                 ?>
 
                     <tr>
-                        <td><?php echo $row["user"] ?></td>
-                        <td><?php echo $row["password"] ?></td>
-                        <td><?php echo $row["email"] ?></td>
-                        <td><?php echo $row["ip"] ?></td>
+                        <td><?php echo $row["id"] ?></td>
+                        <td><?php echo $row["nomEvent"] ?></td>
+                        <td><?php echo $row["date"] ?></td>
+                        <td><?php echo $row["lieu"] ?></td>
+                        <td><?php echo $row["departement"] ?></td>
                         <td><a class="btn btn-info" role="button" href="modifier.php?id=<?php echo $row["id"] ?>">Modifier </td>
                         
                     </tr>
