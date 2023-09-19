@@ -13,7 +13,6 @@ session_start();
 </head>
 <body>
     <?php
-
     $nom = $image = "";
 
 
@@ -50,7 +49,7 @@ session_start();
 
                 <div class="col-4">
 
-                    <a href="pageUser.php"><img src="rage2.png"></a>
+                    <a href="rage.php"><img src="rage2.png"></a>
 
                     
 
@@ -58,13 +57,13 @@ session_start();
 
                 <div class="col-4">
 
-                    <a><img src="neutre2.png"></a>
+                    <a href="neutre.php"><img src="neutre2.png"></a>
 
                 </div>
 
                 <div class="col-4">
 
-                    <a><img src="yes2.png"></a>
+                    <a href="yes.php"><img src="yes2.png"></a>
 
                 </div>
 
