@@ -23,7 +23,7 @@ $sql = "SELECT * FROM evenement";
 $result = $conn->query($sql);
 $conn = new mysqli($servername, $username, $password, $db);
 // On récupère la donnée envoyée
-$compteur_rage=UPDATE `evenement` SET `rage` = (`rage`+1) WHERE `evenement`.`id` = 1
+$compteur_yes=UPDATE `evenement` SET `yes` = (`yes`+1) WHERE `evenement`.`id` = 1
 $redirect_page = 'index.php';
 header('Location:'  .$redirect_page);
 die();
