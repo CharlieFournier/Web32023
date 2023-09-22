@@ -16,7 +16,23 @@ session_start();
 <body>
     <?php
 
-    $id = $nomEvent = $date = $heure = $lieu = $nom = $nom = "";
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+}
+else if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+}
+
+
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$db = "meow";
+
+$conn = new mysqli($servername, $username, $password, $db);
+
+
+    $nomEvent = $date = $heure = $lieu = "";
 
 
     $nomErreur = "";
@@ -44,7 +60,7 @@ session_start();
 
         $id = $_GET['id'];
 
-        $sql = "SELECT * FROM 2venement WHERE id='$id'";
+        $sql = "SELECT * FROM evenement WHERE id='$id'";
 
         $result = $conn->query($sql);
 
