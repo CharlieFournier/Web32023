@@ -16,23 +16,22 @@ session_start();
 <body>
     <?php
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-}
-else if (isset($_POST['id'])) {
-    $id = $_POST['id'];
-}
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+    } else if (isset($_POST['id'])) {
+        $id = $_POST['id'];
+    }
 
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$db = "meow";
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $db = "meow";
 
-$conn = new mysqli($servername, $username, $password, $db);
+    $conn = new mysqli($servername, $username, $password, $db);
 
 
-    $nomEvent = $date = $heure = $lieu = "";
+    $nomEvent = $date = $heure = $lieu = $departement = "";
 
 
     $nomErreur = "";
@@ -43,20 +42,63 @@ $conn = new mysqli($servername, $username, $password, $db);
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Si on entre, on est dans l'envoie du formulaire
 
-        if (empty($_POST['nom'])) {
-            $nomErreur = "Le nom est requis";
+        if (empty($_POST['nomEvent'])) {
+            $nomErreur = "Le nom de l'event est requis";
             $erreur = true;
         } else {
-            $nom = test_input($_POST["nom"]);
+            $nomEvent = test_input($_POST["nomEvent"]);
         }
-        $image = test_input($_POST["image"]);
+
+        if (empty($_POST['date'])) {
+            $nomErreur = "La date de l'event est requis";
+            $erreur = true;
+        } else {
+            $date = test_input($_POST["date"]);
+        }
+
+        if (empty($_POST['heure'])) {
+            $nomErreur = "L'heure de l'event est requis";
+            $erreur = true;
+        } else {
+            $heure = test_input($_POST["heure"]);
+        }
+
+        if (empty($_POST['departement'])) {
+            $nomErreur = "Le departement de l'event est requis";
+            $erreur = true;
+        } else {
+            $departement = test_input($_POST["departement"]);
+        }
+
+        if (empty($_POST['lieu'])) {
+            $nomErreur = "Le lieu de l'event est requis";
+            $erreur = true;
+        } else {
+            $lieu = test_input($_POST["lieu"]);
+        }
+        
+        //---------------------------------------------------------------------------//
+        if ($erreur == false) {
+
+            $sql = "UPDATE `evenement` SET `nomEvent` = '$nomEvent', `date` = '$date', `heure` = '$heure ', `lieu` = '$lieu', `departement` = '$departement' WHERE `evenement`.`id` = $id;";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "mise a jour effectuer correctement";
+                header('Location: http://localhost/Web32023/Exam1/index.php?action=modifier');
+            } else {
+                echo "erreur dans la mise a jour" . $conn->error;
+            }
+
+            if (!$conn) {
+                die("Connection failed: " . $mysqli_connect_error());
+            }
+
+        //---------------------------------------------------------------------------//
 
 
-        // Inserer dans la base de données
-        //SI erreurs, on réaffiche le formulaire 
+        }
     }
     if ($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
-
 
         $id = $_GET['id'];
 
@@ -67,7 +109,6 @@ $conn = new mysqli($servername, $username, $password, $db);
         $row = $result->fetch_assoc();
 
         if ($erreur == true) { ?>
-            <div class="text-center"> <?php echo "Erreur ou 1ere fois"; ?> </div>
         <?php } ?>
         <div class="container">
 
@@ -80,7 +121,10 @@ $conn = new mysqli($servername, $username, $password, $db);
                     <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["nomEvent"] ?>" name="nomEvent" required>
                 </div>
 
-                <div class="col-md-4"> </div>
+                <div class="col-md-4">
+                <label for="validationServer01" class="form-label">ID</label>
+                <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["id"] ?>" name="id" readonly="readonly" required>
+                </div>
 
                 <div class="col-md-4">
 
@@ -94,12 +138,12 @@ $conn = new mysqli($servername, $username, $password, $db);
 
                 <div class="col-md-4">
                     <label for="validationServer01" class="form-label">date</label>
-                    <input type="password" class="form-control is-valid" id="validationServer01" value="<?php echo $row["date"] ?>" name="date" required>
+                    <input type="date" class="form-control is-valid" id="validationServer01" value="<?php echo $row["date"] ?>" name="date" required>
                 </div>
 
                 <div class="col-md-4">
-                <label for="validationServer01" class="form-label">heure</label>
-                <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["heure"] ?>" name="heure" readonly="readonly" required>
+                    <label for="validationServer01" class="form-label">heure</label>
+                    <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["heure"] ?>" name="heure" required>
                 </div>
 
                 <div class="col-md-4">
