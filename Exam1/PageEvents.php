@@ -81,7 +81,7 @@ session_start();
                         <td><?php echo $row["date"] ?></td>
                         <td><?php echo $row["lieu"] ?></td>
                         <td><?php echo $row["departement"] ?></td>
-                        <td><a class="btn btn-info" role="button" href="modifier.php?id=<?php echo $row["id"] ?>">Modifier </td>
+                        <td><a class="btn btn-info" role="button" href="modificationEvents.php?id=<?php echo $row["id"] ?>">Modifier </td>
                         
                     </tr>
 
