@@ -43,7 +43,7 @@ session_start();
 
     <a href="Connexion.php" class="btn" role="button" id="lienAjout"><img src=""></a>
 
-<div class="container-fluid">
+<div class="container-fluid align-items-center text-center">
 
             <div class="row">
 

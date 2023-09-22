@@ -49,7 +49,7 @@ session_start();
     $conn = new mysqli($servername, $username, $password, $db);
 
 
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT * FROM user";
 
     $result = $conn->query($sql);
 

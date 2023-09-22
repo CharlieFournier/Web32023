@@ -83,8 +83,8 @@
                         <td><?php echo $row["nom"] ?></td>
                         <td><?php echo $row["mdp"] ?></td>
                         <td><img src="<?php echo $row["urlImage"] ?>"></td>
-                        <td><a class="btn btn-info" role="button" href="ModifierUser.php?id=<?php echo $row["id"] ?>"> Modifier </td>
-                        <td><a class="btn btn-info" role="button" href="DeleteUser.php?id=<?php echo $row["id"] ?>"> Delete </td>
+                        <td><a class="btn btn-info" role="button" href="modifier.php?id=<?php echo $row["id"] ?>"> Modifier </td>
+                        <td><a class="btn btn-info" role="button" href="delete.php?id=<?php echo $row["id"] ?>"> Delete </td>
                         
                     </tr>
 

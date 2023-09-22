@@ -40,7 +40,7 @@ session_start();
             die("Connection failed: " . $mysqli_connect_error());
         }
 
-        $sql = "SELECT * FROM users where user='$user' and password='$password'";
+        $sql = "SELECT * FROM user where user='$user' and password='$password'";
 
         $result = $conn->query($sql);
 
