@@ -23,17 +23,7 @@ $sql = "SELECT * FROM evenement";
 $result = $conn->query($sql);
 $conn = new mysqli($servername, $username, $password, $db);
 // On récupère la donnée envoyée
-$clique = $_GET['clique'];
-// La page se recharge, si elle a été envoyée avec l'option clique "ok"
-if($clique == ok)
-{
-        // On récupère le nombre de cliques dans la bdd ( peut etre pas necessaire si deja fait )
-        $retour_nb_cliques = (... SELECT COUNT...) $nb_cliques;
-        // On incrémente la variable qu'on réinsère dans la bdd
-        $nb_cliques++;
-        mysql_query(UPDATE.......)
-}
-
+$compteur_rage=UPDATE `evenement` SET `rage` = (`rage`+1) WHERE `evenement`.`id` = 1
 ?>
  <?php
     function test_input($data){

@@ -49,7 +49,7 @@ session_start();
 
                 <div class="col-4">
 
-                    <a href="rage.php"><img src="rage3.png"></a>
+                    <a href="rage.php" id="rage"><img src="rage3.png"></a>
 
                     
 
@@ -57,13 +57,13 @@ session_start();
 
                 <div class="col-4">
 
-                    <a href="neutre.php"><img src="neutre3.png"></a>
+                    <a href="neutre.php" id="neutre"><img src="neutre3.png"></a>
 
                 </div>
 
                 <div class="col-4">
 
-                    <a href="yes.php"><img src="yes3.png"></a>
+                    <a href="yes.php" id="yes"><img src="yes3.png"></a>
 
                 </div>
 
