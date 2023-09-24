@@ -17,6 +17,8 @@ session_start();
 
 
     $nomErreur = "";
+    $delaiRage = $delaiNeutre = $delaiYes ="";
+
 
 
     $erreur = false;
@@ -29,13 +31,26 @@ session_start();
             $erreur = true;
         }
         else{
-            $nom = test_input($_POST["nom"]); 
+            $nom = test_input($_POST["nom"]);
         }
         $image = test_input($_POST["image"]);
+        $disabledRage = "";
+
+        if (isset($_SESSION['ClickRage']) && (time() - $_SESSION['ClickRage'] < 2)) {
+            $delaiRage = "disabled";
+        }
+        
+        if (isset($_SESSION['ClickNeutre']) && (time() - $_SESSION['ClickNeutre'] < 2)) {
+            $delaiNeutre = "disabled";
+        }
+        
+        if (isset($_SESSION['ClickYes']) && (time() - $_SESSION['ClickYes'] < 2)) {
+            $delaiYes = "disabled";
+        }
 
 
         // Inserer dans la base de données
-        //SI erreurs, on réaffiche le formulaire 
+        //SI erreurs, on réaffiche le formulaire
     }
     if($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
     ?>
