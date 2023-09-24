@@ -39,6 +39,7 @@ session_start();
 
         if (isset($_SESSION['ClickRage']) && (time() - $_SESSION['ClickRage'] < 2)) {
             $delaiRage = "disabled";
+
         }
 
         if (isset($_SESSION['ClickNeutre']) && (time() - $_SESSION['ClickNeutre'] < 2)) {
