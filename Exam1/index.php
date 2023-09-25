@@ -67,7 +67,7 @@ session_start();
 
                     <form action="rage.php" method="post">
                         <button type="submit" name="rage" class="btn-custom" <?= $delaiRage ?>>
-                            <img src="rage3.png">
+                            <img src="rage.png">
                         </button>
                     </form>
 
@@ -78,7 +78,7 @@ session_start();
 
                     <form action="neutre.php" method="post">
                         <button type="submit" name="neutre" class="btn-custom" <?= $delaiNeutre ?>>
-                            <img src="neutre3.png">
+                            <img src="neutre.png">
                         </button>
                     </form>
                 </div>
@@ -87,7 +87,7 @@ session_start();
 
                     <form action="yes.php" method="post">
                         <button type="submit" name="yes" class="btn-custom" <?= $delaiYes ?>>
-                            <img src="yes3.png">
+                            <img src="yes.png">
                         </button>
                     </form>
                 </div>

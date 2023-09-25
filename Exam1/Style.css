@@ -2,6 +2,8 @@ body,
 html {
     height: 100%;
     width: 100%;
+    background-color: bisque; /* Couleur bleu marine */
+
 }
 
 #test {
