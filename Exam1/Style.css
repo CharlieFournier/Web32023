@@ -80,3 +80,12 @@ html {
 .options-page .btn-custom:hover {
     background-color: #0056b3;
 }
+.card {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

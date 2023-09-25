@@ -64,21 +64,29 @@ session_start();
     ?>
 
     <div class="container-fluid align-items-center text-center h-100">
-        <div class="row h-100">
-            <div class="col-md-4 offset-md-4">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                    <div class="form-group">
-                        <label for="user">User :</label>
-                        <input type="text" name="user" id="user" class="form-control" maxlength="30">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div>
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                            <div class="form-group">
+                                <img src="pp.png" width="100" height="100">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="user">User :</label>
+                                <input type="text" name="user" id="user" class="form-control" maxlength="30">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password :</label>
+                                <input type="password" name="password" id="password" class="form-control" maxlength="15">
+                            </div>
+                            <span style="color:red;"><?php echo $nomErreur; ?></span>
+                            <br>
+                            <input type="submit" value="Connexion" class="btn btn-custom">
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password :</label>
-                        <input type="password" name="password" id="password" class="form-control" maxlength="15">
-                    </div>
-                    <span style="color:red;"><?php echo $nomErreur; ?></span>
-                    <br>
-                    <input type="submit" value="Connexion" class="btn btn-custom">
-                </form>
+                </div>
             </div>
         </div>
     </div>
