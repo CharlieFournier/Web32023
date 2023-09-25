@@ -53,11 +53,10 @@ session_start();
                 echo "<h2 style='color:red';>Nom d'usager ou mot de passe incorrect</h2>";                                  #  IMPORTANT
                 $erreur = true;
             }
-        }
-        else {
+        } else {
             echo "<h2 style='color:red';>Nom d'usager ou mot de passe incorrect</h2>";                                      #  IMPORTANT
             $erreur = true;
-        } 
+        }
         $conn->close();
     }
 
@@ -80,13 +79,8 @@ session_start();
         }
         //------------------------------------------------
         if ($erreur == false) {
-            ?>
-            <div class="container-fluid align-items-center text-center h100">
-            <div class="row h30">
-            <div class="col-6"><a href="PageUser.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Options User</button></a></div>
-            <div class="col-6"><a href="PageEvents.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Options Events</button></a></div>
-            </div>
-            <?php
+            header('Location: Option.php'); // Rediriger vers option.php
+            exit();
         }
     }
     if ($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {

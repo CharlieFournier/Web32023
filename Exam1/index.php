@@ -39,7 +39,6 @@ session_start();
 
         if (isset($_SESSION['ClickRage']) && (time() - $_SESSION['ClickRage'] < 2)) {
             $delaiRage = "disabled";
-
         }
 
         if (isset($_SESSION['ClickNeutre']) && (time() - $_SESSION['ClickNeutre'] < 2)) {
@@ -67,7 +66,7 @@ session_start();
                 <div class="col-4">
 
                     <form action="rage.php" method="post">
-                        <button type="submit" name="rage" <?= $delaiRage ?>>
+                        <button type="submit" name="rage" class="btn-custom" <?= $delaiRage ?>>
                             <img src="rage3.png">
                         </button>
                     </form>
@@ -78,7 +77,7 @@ session_start();
                 <div class="col-4">
 
                     <form action="neutre.php" method="post">
-                        <button type="submit" name="neutre" <?= $delaiNeutre ?>>
+                        <button type="submit" name="neutre" class="btn-custom" <?= $delaiNeutre ?>>
                             <img src="neutre3.png">
                         </button>
                     </form>
@@ -87,7 +86,7 @@ session_start();
                 <div class="col-4">
 
                     <form action="yes.php" method="post">
-                        <button type="submit" name="yes" <?= $delaiYes ?>>
+                        <button type="submit" name="yes" class="btn-custom" <?= $delaiYes ?>>
                             <img src="yes3.png">
                         </button>
                     </form>

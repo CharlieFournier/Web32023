@@ -39,7 +39,7 @@ session_start();
 
 
                 // Inserer dans la base de données
-                //SI erreurs, on réaffiche le formulaire 
+                //SI erreurs, on réaffiche le formulaire
             }
 
             $servername = "localhost";
