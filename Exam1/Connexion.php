@@ -49,7 +49,7 @@ session_start();
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
                 $_SESSION["connexion"]  = true;
-                header('Location: Option.php'); // Rediriger vers Option.php
+                header('Location: PageModeration.php'); // Rediriger vers Option.php
                 exit();
             } else {
                 echo "<h3 style='color:red';>Nom d'usager ou mot de passe incorrect</h3>";                                  #  IMPORTANT
