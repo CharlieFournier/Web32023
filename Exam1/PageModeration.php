@@ -61,7 +61,7 @@
         <a href="PageEvents.php"><button type="submit" class="btn-custom">Événements</button></a>
         <a href="index.php"><button type="submit" class="btn-custom">Accueil</button></a>
 
-        <div class="container-fluid h-100 p-0">
+        <div class="container-fluid h-100 p-0 text-center">
             <div class="row">
                 <div class="col-3">
 
@@ -73,15 +73,18 @@
                                 while ($row = $result2->fetch_assoc()) {
                                 ?>
                                     <div class="col-4">
+                                        <a href="modificationEvents.php?id=<?php echo $row["id"] ?>" id="Link">
                                     <div class="card">
                                         <div>
                                             <h2><?php echo $row["nomEvent"] ?></h2>
                                         </div>
                                     </div>
+                                        </a>
                                     </div>
+                                    <?php    } ?>
                     </div>
-                <?php
-                                } ?>
+                
+                                
                 </div>
 
                 <div class="col-3">

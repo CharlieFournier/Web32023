@@ -15,7 +15,7 @@ session_start();
 
 <body>
     <?php
-    //require("ConnexionServeur.php")
+    require(ConnexionServeur.php)
     $nom = $image = "";
 
 
