@@ -10,6 +10,11 @@ html {
     background-color: #212529;
 }
 
+#Link, #Link:visited {
+    text-decoration: none;
+    color: black;
+}
+
 
 
 #btnConnexion {
