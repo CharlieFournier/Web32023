@@ -12,7 +12,7 @@
 <body>
     <?php
 
-    
+
     $erreur = false;
 
     $servername2 = "localhost";
@@ -69,22 +69,22 @@
 
                 <div class="col-6">
                     <div class="row p-0">
-                                <?php
-                                while ($row = $result2->fetch_assoc()) {
-                                ?>
-                                    <div class="col-4">
-                                        <a href="modificationEvents.php?id=<?php echo $row["id"] ?>" id="Link">
+                        <?php
+                        while ($row = $result2->fetch_assoc()) {
+                        ?>
+                            <div class="col-4">
+                                <a href="modificationEvents.php?id=<?php echo $row["id"] ?>" id="Link">
                                     <div class="card">
                                         <div>
                                             <h2><?php echo $row["nomEvent"] ?></h2>
                                         </div>
                                     </div>
-                                        </a>
-                                    </div>
-                                    <?php    } ?>
+                                </a>
+                            </div>
+                        <?php    } ?>
                     </div>
-                
-                                
+
+
                 </div>
 
                 <div class="col-3">

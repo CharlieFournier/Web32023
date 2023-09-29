@@ -31,7 +31,7 @@ session_start();
     $conn = new mysqli($servername, $username, $password, $db);
 
 
-    $nomEvent = $date = $heure = $lieu = $departement = "";
+    $nomEvent = $date = $lieu = $departement = $description = "";
 
 
     $nomErreur = "";
@@ -56,18 +56,18 @@ session_start();
             $date = test_input($_POST["date"]);
         }
 
-        if (empty($_POST['heure'])) {
-            $nomErreur = "L'heure de l'event est requis";
-            $erreur = true;
-        } else {
-            $heure = test_input($_POST["heure"]);
-        }
-
         if (empty($_POST['departement'])) {
             $nomErreur = "Le departement de l'event est requis";
             $erreur = true;
         } else {
             $departement = test_input($_POST["departement"]);
+        }
+
+        if (empty($_POST['description'])) {
+            $nomErreur = "La description de l'event est requis";
+            $erreur = true;
+        } else {
+            $description = test_input($_POST["description"]);
         }
 
         if (empty($_POST['lieu'])) {
@@ -80,7 +80,7 @@ session_start();
         //---------------------------------------------------------------------------//
         if ($erreur == false) {
 
-            $sql = "UPDATE `evenement` SET `nomEvent` = '$nomEvent', `date` = '$date', `heure` = '$heure ', `lieu` = '$lieu', `departement` = '$departement' WHERE `evenement`.`id` = $id;";
+            $sql = "UPDATE `evenement` SET `nomEvent` = '$nomEvent', `date` = '$date', `description` = '$description ', `lieu` = '$lieu', `departement` = '$departement' WHERE `evenement`.`id` = $id;";
 
             if ($conn->query($sql) === TRUE) {
                 echo "mise a jour effectuer correctement";
@@ -141,14 +141,17 @@ session_start();
                     <input type="date" class="form-control is-valid" id="validationServer01" value="<?php echo $row["date"] ?>" name="date" required>
                 </div>
 
-                <div class="col-md-4">
-                    <label for="validationServer01" class="form-label">heure</label>
-                    <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["heure"] ?>" name="heure" required>
-                </div>
+                <div class="col-md-4"></div>
 
                 <div class="col-md-4">
                     <label for="validationServer01" class="form-label">lieu</label>
                     <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["lieu"] ?>" name="lieu" required>
+
+                </div>
+
+                <div class="col-12">
+                    <label for="validationServer01" class="form-label">Description</label>
+                    <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["description"] ?>" name="description" required>
 
                 </div>
 
