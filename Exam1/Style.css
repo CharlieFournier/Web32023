@@ -1,6 +1,9 @@
-body,html {
+body,
+html {
     height: 100%;
     width: 100%;
+    background-color: bisque; /* Couleur bleu marine */
+
 }
 
 #test {
@@ -21,6 +24,68 @@ body,html {
 }
 
 .p-0 {
-    padding:0px;
+    padding: 0px;
 }
 
+.btn-custom {
+    border: none;
+    border-radius: 1px;
+    display: inline-block;
+    transition: transform 0.2s, background-color 0.3s;
+    background-color: beige
+}
+
+.btn-custom:active {
+    transform: scale(0.96);
+}
+
+.options-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+
+.options-page .container-fluid {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+
+.options-page .options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.options-page .btn-custom {
+    padding: 20px 40px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+    display: inline-block;
+    transform: scale(1);
+}
+
+.options-page .btn-custom:active {
+    transform: scale(0.96);
+}
+
+.options-page .btn-custom:hover {
+    background-color: #0056b3;
+}
+.card {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

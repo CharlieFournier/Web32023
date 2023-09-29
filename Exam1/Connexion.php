@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="meow.css">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
 </head>
@@ -49,74 +49,47 @@ session_start();
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
                 $_SESSION["connexion"]  = true;
+                header('Location: PageModeration.php'); // Rediriger vers Option.php
+                exit();
             } else {
-                echo "<h2 style='color:red';>Nom d'usager ou mot de passe incorrect</h2>";                                  #  IMPORTANT
+                echo "<h3 style='color:red';>Nom d'usager ou mot de passe incorrect</h3>";                                  #  IMPORTANT
                 $erreur = true;
             }
-        }
-        else {
-            echo "<h2 style='color:red';>Nom d'usager ou mot de passe incorrect</h2>";                                      #  IMPORTANT
+        } else {
+            echo "<h3 style='color:red';>Nom d'usager ou mot de passe incorrect</h3>";                                      #  IMPORTANT
             $erreur = true;
-        } 
+        }
         $conn->close();
     }
+    ?>
 
+    <div class="container-fluid align-items-center text-center h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div>
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                            <div class="form-group">
+                                <img src="pp.png" width="100" height="100">
 
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        //------------------------------------------------
-        if (empty($_POST['user'])) {
-            $nomErreur = "User ou mot de passe incorrect";
-            $erreur = true;
-        } else {
-            $user = test_input($_POST["user"]);
-        }
-        //------------------------------------------------
-        if (empty($_POST['password'])) {
-            $nomErreur = "User ou mot de passe incorrect";
-            $erreur = true;
-        } else {
-            $password = test_input($_POST["password"]);
-        }
-        //------------------------------------------------
-        if ($erreur == false) {
-            ?>
-            <div class="container-fluid align-items-center text-center h100">
-            <div class="row h30">
-            <div class="col-6"><a href="PageUser.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Options User</button></a></div>
-            <div class="col-6"><a href="PageEvents.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Options Events</button></a></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="user">User :</label>
+                                <input type="text" name="user" id="user" class="form-control" maxlength="30">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password :</label>
+                                <input type="password" name="password" id="password" class="form-control" maxlength="15">
+                            </div>
+                            <span style="color:red;"><?php echo $nomErreur; ?></span>
+                            <br>
+                            <input type="submit" value="Connexion" class="btn btn-custom">
+                        </form>
+                    </div>
+                </div>
             </div>
-            <?php
-        }
-    }
-    if ($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
-
-    ?>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            User : <input type="text" name="user" size="25" maxlength="30">
-
-            <br>
-            <span style="color:red" ;><?php echo $nomErreur; ?></span>
-            <br>
-
-            Password : <input type="password" name="password" size="25" maxlength="15"><br>
-
-            <input type="submit" value="Connexion">
-        </form>
-
-    <?php
-    }
-
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = addslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    ?>
-
+        </div>
+    </div>
 
 </body>
 
