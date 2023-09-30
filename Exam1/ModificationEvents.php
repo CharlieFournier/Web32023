@@ -76,7 +76,7 @@ session_start();
         } else {
             $lieu = test_input($_POST["lieu"]);
         }
-        
+
         //---------------------------------------------------------------------------//
         if ($erreur == false) {
 
@@ -84,7 +84,7 @@ session_start();
 
             if ($conn->query($sql) === TRUE) {
                 echo "mise a jour effectuer correctement";
-                header('Location: http://localhost/Web32023/Exam1/index.php?action=modifier');
+                header('Location: http://localhost/Web32023/Exam1/PageModeration.php?action=modifier');
             } else {
                 echo "erreur dans la mise a jour" . $conn->error;
             }
@@ -93,7 +93,7 @@ session_start();
                 die("Connection failed: " . $mysqli_connect_error());
             }
 
-        //---------------------------------------------------------------------------//
+            //---------------------------------------------------------------------------//
 
 
         }
@@ -122,8 +122,8 @@ session_start();
                 </div>
 
                 <div class="col-md-4">
-                <label for="validationServer01" class="form-label">ID</label>
-                <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["id"] ?>" name="id" readonly="readonly" required>
+                    <label for="validationServer01" class="form-label">ID</label>
+                    <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["id"] ?>" name="id" readonly="readonly" required>
                 </div>
 
                 <div class="col-md-4">

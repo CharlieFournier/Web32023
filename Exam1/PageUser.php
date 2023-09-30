@@ -14,51 +14,71 @@ session_start();
 </head>
 
 <body>
-    <div class="container-fluid h-100" id="test">
-        <div class="row h-100">
-            <?php
+    <?php
 
-            $nom = $image = "";
+    $nom = $image = "";
 
 
-            $nomErreur = "";
+    $nomErreur = "";
 
 
-            $erreur = false;
+    $erreur = false;
 
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                //Si on entre, on est dans l'envoie du formulaire
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        //Si on entre, on est dans l'envoie du formulaire
 
-                if (empty($_POST['nom'])) {
-                    $nomErreur = "Le nom est requis";
-                    $erreur = true;
-                } else {
-                    $nom = test_input($_POST["nom"]);
-                }
-                $image = test_input($_POST["image"]);
-
-
-                // Inserer dans la base de données
-                //SI erreurs, on réaffiche le formulaire
-            }
-
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $db = "meow";
-
-            $conn = new mysqli($servername, $username, $password, $db);
+        if (empty($_POST['nom'])) {
+            $nomErreur = "Le nom est requis";
+            $erreur = true;
+        } else {
+            $nom = test_input($_POST["nom"]);
+        }
+        $image = test_input($_POST["image"]);
 
 
-            $sql = "SELECT * FROM user";
+        // Inserer dans la base de données
+        //SI erreurs, on réaffiche le formulaire
+    }
 
-            $result = $conn->query($sql);
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $db = "meow";
 
-            if ($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
+    $conn = new mysqli($servername, $username, $password, $db);
 
 
-            ?>
-                <div class="p-0">
+    $sql = "SELECT * FROM user";
+
+    $result = $conn->query($sql);
+
+    if ($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
+
+
+    ?>
+
+        <div class="container-fluid h-100" id="test">
+            <div class="row h-100">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
+                    <div class="container-fluid navbar p-0">
+
+                        <a class="navbar-brand p-0" href="PageModeration.php"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link active navText" aria-curent="page" href="PageModeration.php">Page d'accueil</a>
+                                <a class="nav-link navText" href="PageUser.php">Users</a>
+                                <a class="nav-link navText" href="PageEvents.php">Évènements</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="p-0 test1">
                     <table class="table table-dark">
                         <thead>
 
@@ -101,8 +121,8 @@ session_start();
                         }
 
         ?>
+            </div>
         </div>
-    </div>
 </body>
 
 </html>
