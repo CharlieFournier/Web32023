@@ -6,8 +6,21 @@ html {
 
 }
 
+.navbar {
+    background-color: #082d74;
+}
+
+#logoNavBar {
+    height: 75px;
+}
+
 #test {
     background-color: #212529;
+    
+}
+
+.navText {
+    color: white;
 }
 
 #Link, #Link:visited {
@@ -15,6 +28,9 @@ html {
     color: black;
 }
 
+.test1 {
+    margin-top: 75px;
+}
 
 
 #btnConnexion {

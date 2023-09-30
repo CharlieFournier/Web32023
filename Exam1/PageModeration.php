@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Options</title>
+    <title>Accueil Modérateur</title>
     <link rel="stylesheet" href="Style.css"> <!-- Assurez-vous que le chemin est correct -->
 </head>
 
@@ -57,12 +57,33 @@
     }
     if ($erreur == false) {
     ?>
-        <a href="PageUser.php"><button type="submit" class="btn-custom">Utilisateur</button></a>
-        <a href="PageEvents.php"><button type="submit" class="btn-custom">Événements</button></a>
-        <a href="index.php"><button type="submit" class="btn-custom">Accueil</button></a>
 
-        <div class="container-fluid h-100 p-0 text-center">
+<div class="container-fluid h-100 p-0 text-center ">
             <div class="row">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
+    <div class="container-fluid navbar p-0">
+
+      <a class="navbar-brand p-0" href="https://www.cegeptr.qc.ca/" target="_blank"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active navText" aria-curent="page" href="PageModeration.php">Page d'accueil</a>
+          <a class="nav-link navText" href="PageUser.php">Users</a>
+          <a class="nav-link navText" href="PageEvents.php">Évènements</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
                 <div class="col-3">
 
                 </div>
@@ -92,7 +113,7 @@
                 </div>
             </div>
         </div>
-
+                        
     <?php } ?>
 </body>
 
