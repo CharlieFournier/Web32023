@@ -127,7 +127,8 @@ session_start();
                 </div>
             </div>
         </nav>
-        <div class="container-fluid text-center test1 h-100">
+
+        <div class="test2 container-fluid text-center h-100 " style="margin-top: 150px;">
             <div class="row">
                 <div class="col-3"></div>
                 <div class="col-6">
@@ -142,14 +143,14 @@ session_start();
 
                         <div class="col-md-4">
                             <label for="validationServer01" class="form-label">ID</label>
-                            <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["id"] ?>" name="id" readonly="readonly" required>
+                            <input type="text" class="form-control is-valid" id="validationServer02" value="<?php echo $row["id"] ?>" name="id" readonly="readonly" required>
                         </div>
 
                         <div class="col-md-4">
 
 
                             <label for="validationServer01" class="form-label">departement</label>
-                            <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["departement"] ?>" name="departement" required>
+                            <input type="text" class="form-control is-valid" id="validationServer03" value="<?php echo $row["departement"] ?>" name="departement" required>
 
                         </div>
 
@@ -157,20 +158,20 @@ session_start();
 
                         <div class="col-md-4">
                             <label for="validationServer01" class="form-label">date</label>
-                            <input type="date" class="form-control is-valid" id="validationServer01" value="<?php echo $row["date"] ?>" name="date" required>
+                            <input type="date" class="form-control is-valid" id="validationServer04" value="<?php echo $row["date"] ?>" name="date" required>
                         </div>
 
                         <div class="col-md-4"></div>
 
                         <div class="col-md-4">
                             <label for="validationServer01" class="form-label">lieu</label>
-                            <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["lieu"] ?>" name="lieu" required>
+                            <input type="text" class="form-control is-valid" id="validationServer05" value="<?php echo $row["lieu"] ?>" name="lieu" required>
 
                         </div>
 
                         <div class="col-12">
                             <label for="validationServer01" class="form-label">Description</label>
-                            <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["description"] ?>" name="description" required>
+                            <input type="text" class="form-control is-valid" id="validationServer06" value="<?php echo $row["description"] ?>" name="description" required>
 
                         </div>
 
