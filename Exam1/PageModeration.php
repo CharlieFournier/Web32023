@@ -84,11 +84,11 @@
 
 
 
-                <div class="col-3">
+                <div class="col-3 test1">
 
                 </div>
 
-                <div class="col-6">
+                <div class="col-6 Background-Event test1">
                     <div class="row p-0">
                         <?php
                         while ($row = $result2->fetch_assoc()) {
@@ -108,7 +108,7 @@
 
                 </div>
 
-                <div class="col-3">
+                <div class="col-3 test1">
 
                 </div>
             </div>

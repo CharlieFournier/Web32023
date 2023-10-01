@@ -110,8 +110,29 @@ session_start();
 
         if ($erreur == true) { ?>
         <?php } ?>
-        <div class="container">
 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
+                    <div class="container-fluid navbar p-0">
+
+                        <a class="navbar-brand p-0" href="https://www.cegeptr.qc.ca/" target="_blank"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link active navText" aria-curent="page" href="PageModeration.php">Page d'accueil</a>
+                                <a class="nav-link navText" href="PageUser.php">Users</a>
+                                <a class="nav-link navText" href="PageEvents.php">Évènements</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+        
+        <div class="container-fluid text-center align-items-center test1">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
 
 
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="was-validated row g-2" novalidate>
@@ -160,7 +181,10 @@ session_start();
                 <input type="submit">
             </form>
         </div>
-
+        </div>
+        </div>
+        <div class="col-3">
+        </div>
     <?php
     }
 
