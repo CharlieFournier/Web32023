@@ -9,9 +9,8 @@ if (isset($_GET['id'])) {
     $id = $_POST['id'];
 }
 
-$incrementation = $conn->prepare("UPDATE `evenement` SET `yesEnt` = `yesEnt` + 1 WHERE `id` = 1");
+$incrementation = $conn->prepare("UPDATE `evenement` SET `yesEnt` = `yesEnt` + 1 WHERE `id` = $id");
 $incrementation->bind_param("i", $id);
-$id = 1;
 $incrementation->execute();
 $incrementation->close();
 $_SESSION['ClickYes'] = time();
