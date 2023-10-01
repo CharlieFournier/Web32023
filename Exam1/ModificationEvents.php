@@ -186,6 +186,10 @@ session_start();
                 <a href="index.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
                             test
                         </button></a>
+
+                        <a href="indexEntreprise.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
+                            test
+                        </button></a>
                 </div>
             </div>
         </div>

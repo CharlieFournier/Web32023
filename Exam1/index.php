@@ -22,6 +22,8 @@ session_start();
     $nomErreur = "";
     $delaiRage = $delaiNeutre = $delaiYes = "";
 
+    $id = -1;
+
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
     } else if (isset($_POST['id'])) {
@@ -98,7 +100,8 @@ session_start();
                 </div>
 
             </div>
-            <h1><?php echo $id ?></h1>
+
+            <h1> <?php if($id > 0) echo $id ?> </h1>
         </div>
 
 

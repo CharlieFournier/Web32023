@@ -13,9 +13,16 @@ session_start();
 </head>
 <body>
     <?php
-    require(ConnexionServeur.php)
+   // require(ConnexionServeur.php);
     $nom = $image = "";
 
+    $id = -1;
+
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+    } else if (isset($_POST['id'])) {
+        $id = $_POST['id'];
+    }
 
     $nomErreur = "";
 
@@ -50,7 +57,7 @@ session_start();
 
                 <div class="col-4">
 
-                    <a href="rage1.php" id="rageEnt"><img src="rage3.png"></a>
+                    <a href="rage1.php?id=<?php echo $row["id"] ?>" id="rageEnt"><img src="rage3.png"></a>
 
                     
 
@@ -58,18 +65,18 @@ session_start();
 
                 <div class="col-4">
 
-                    <a href="neutre1.php" id="neutreEnt"><img src="neutre3.png"></a>
+                    <a href="neutre1.php?id=<?php echo $row["id"]?>" id="neutreEnt"><img src="neutre3.png"></a>
 
                 </div>
 
                 <div class="col-4">
 
-                    <a href="yes1.php" id="yesEnt"><img src="yes3.png"></a>
+                    <a href="yes1.php?id=<?php echo $row["id"] ?>" id="yesEnt"><img src="yes3.png"></a>
 
                 </div>
 
             </div>
-
+            <h1> <?php if($id > 0) echo $id ?> </h1>
         </div>
 
 

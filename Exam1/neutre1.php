@@ -1,11 +1,16 @@
 <?php
 session_start();
 
-require("ConnexionServeur.php")
+//require("ConnexionServeur.php")
 
-$incrementation = $conn->prepare("UPDATE `evenement` SET `neutreEnt` = `neutreEnt` + 1 WHERE `id` = 1");
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+} else if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+}
+
+$incrementation = $conn->prepare("UPDATE `evenement` SET `neutreEnt` = `neutreEnt` + 1 WHERE `id` = $id");
 $incrementation->bind_param("i", $id);
-$id = 1;
 $incrementation->execute();
 $incrementation->close();
 $_SESSION['ClickNeutreEnt'] = time();
