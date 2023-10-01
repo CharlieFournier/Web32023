@@ -22,7 +22,11 @@ session_start();
     $nomErreur = "";
     $delaiRage = $delaiNeutre = $delaiYes = "";
 
-
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+    } else if (isset($_POST['id'])) {
+        $id = $_POST['id'];
+    }
 
     $erreur = false;
 
@@ -94,7 +98,7 @@ session_start();
                 </div>
 
             </div>
-
+            <h1><?php echo $id ?></h1>
         </div>
 
 

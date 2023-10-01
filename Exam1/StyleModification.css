@@ -1,0 +1,37 @@
+body,
+html {
+    height: 100%;
+    width: 100%;
+    background-color: bisque; /* Couleur bleu marine */
+
+}
+
+.navbar {
+    background-color: #082d74;
+}
+
+#logoNavBar {
+    height: 75px;
+}
+
+.navText {
+    color: white;
+}
+
+#Link, #Link:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.test1 {
+    margin-top: 150px;
+}
+
+.h-30 {
+    height: 30%;
+}
+
+.btn-index {
+    border-radius: 4px;
+    border-width: 1px;
+}

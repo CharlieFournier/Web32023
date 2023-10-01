@@ -61,10 +61,10 @@ session_start();
         <div class="container-fluid h-100" id="test">
             <div class="row h-100">
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
                     <div class="container-fluid navbar p-0">
 
-                        <a class="navbar-brand p-0" href="PageModeration.php"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
+                        <a class="navbar-brand p-0" href="https://www.cegeptr.qc.ca/" target="_blank"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -73,12 +73,11 @@ session_start();
                                 <a class="nav-link active navText" aria-curent="page" href="PageModeration.php">Page d'accueil</a>
                                 <a class="nav-link navText" href="PageUser.php">Users</a>
                                 <a class="nav-link navText" href="PageEvents.php">Évènements</a>
-
+                                <a class="nav-link navText" href="index.php">Page Vote</a>
                             </div>
                         </div>
                     </div>
                 </nav>
-
 
 
                 <div class="p-0 test1">
