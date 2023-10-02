@@ -71,7 +71,7 @@ session_start();
 
                 <div class="col-4">
 
-                    <a href="yes1.php?id=<?php echo $id ?>" id="yesEnt"><img src="yes3.png"></a>
+                    <a href="yes2.php?id=<?php echo $id ?>" id="yesEnt"><img src="yes3.png"></a>
 
                 </div>
 
