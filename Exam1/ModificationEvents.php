@@ -181,6 +181,14 @@ session_start();
                     </form>
                 </div>
                 <div class="col-3"></div>
+
+                <div class="col-12 align-items-center h-100">
+                    
+                    <a href="DeleteEvents.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
+                                delete
+                            </button></a>
+                    </div>
+
                 <div class="col-12 align-items-center h-100">
                     
                 <a href="index.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
