@@ -181,14 +181,14 @@ session_start();
                     </form>
                 </div>
                 <div class="col-3"></div>
-                <div class="col-6">
+                <div class="col-12 align-items-center h-100">
                     
                 <a href="index.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
-                            test
+                            Index
                         </button></a>
 
                         <a href="indexEntreprise.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
-                            test
+                            IdxEnt
                         </button></a>
                 </div>
             </div>
