@@ -31,7 +31,7 @@ session_start();
     $conn = new mysqli($servername, $username, $password, $db);
 
 
-    $nomEvent = $date = $lieu = $departement = $description = "";
+    $nomEvent = $date = $lieu = $departement = $description = $url = "";
 
 
     $nomErreur = "";
@@ -76,15 +76,22 @@ session_start();
         } else {
             $lieu = test_input($_POST["lieu"]);
         }
+        
+        if (empty($_POST['url'])) {
+            $nomErreur = "L'url est requis";
+            $erreur = true;
+        } else {
+            $url = test_input($_POST["url"]);
+        }
 
         //---------------------------------------------------------------------------//
         if ($erreur == false) {
 
-            $sql = "UPDATE `evenement` SET `nomEvent` = '$nomEvent', `date` = '$date', `description` = '$description ', `lieu` = '$lieu', `departement` = '$departement' WHERE `evenement`.`id` = $id;";
+            $sql = "UPDATE `evenement` SET `nomEvent` = '$nomEvent', `date` = '$date', `description` = '$description ', `lieu` = '$lieu', `departement` = '$departement',`url`='$url' WHERE `evenement`.`id` = $id;";
 
             if ($conn->query($sql) === TRUE) {
                 echo "mise a jour effectuer correctement";
-                header('Location: http://localhost/Web32023/Exam1/PageModeration.php?action=modifier');
+                header('Location: ./PageModeration.php');
             } else {
                 echo "erreur dans la mise a jour" . $conn->error;
             }
@@ -132,6 +139,7 @@ session_start();
             <div class="row">
                 <div class="col-3"></div>
                 <div class="col-6">
+                <img src="<?php echo $row["url"]?>" width="200" height="200">
 
 
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="was-validated row g-2" novalidate>
@@ -174,6 +182,11 @@ session_start();
                             <input type="text" class="form-control is-valid" id="validationServer06" value="<?php echo $row["description"] ?>" name="description" required>
 
                         </div>
+                        <div class="col-12">
+                            <label for="validationServer01" class="form-label">Url Image</label>
+                            <input type="text" class="form-control is-valid" id="validationServer07" value="<?php echo $row["url"]?>" name="url" required>
+
+                        </div>
 
                         <hr>
 
@@ -187,15 +200,16 @@ session_start();
                     <a href="DeleteEvents.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
                                 delete
                             </button></a>
+                         
                     </div>
 
                 <div class="col-12 align-items-center h-100">
                     
-                <a href="index.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
+                <a href="Rating.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
                             Index
                         </button></a>
 
-                        <a href="indexEntreprise.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
+                        <a href="RatingEntreprise.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
                             IdxEnt
                         </button></a>
                 </div>

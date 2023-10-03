@@ -24,5 +24,5 @@ $incrementation->bind_param("i", $id);
 $incrementation->execute();
 $incrementation->close();
 $_SESSION['ClickRage'] = time();
-header('Location: index.php?id='.$id);
+header('Location: Rating.php?id='.$id);
 ?>

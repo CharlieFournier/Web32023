@@ -24,5 +24,5 @@ $incrementation->bind_param("i", $id);
 $incrementation->execute();
 $incrementation->close();
 $_SESSION['ClickYesEnt'] = time();
-header('Location: indexEntreprise.php?id='.$id);
+header('Location: RatingEntreprise.php?id='.$id);
 ?>
