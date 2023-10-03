@@ -76,7 +76,7 @@ session_start();
                 </div>
 
             </div>
-            <h1> <?php if($id > 0) echo $id ?> </h1>
+            <!--<h1> ?php if($id > 0) echo $id ?> </h1> -->
         </div>
 
 
