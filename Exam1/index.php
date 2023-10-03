@@ -72,36 +72,27 @@ session_start();
 
                 <div class="col-4">
 
-                    <form action="rage.php" method="post">
-                        <button type="submit" name="rage" class="btn-custom" <?= $delaiRage ?>>
-                            <img src="rage.png">
-                        </button>
-                    </form>
+                    <a href="rage.php?id=<?php echo $id ?>" id="rageEnt"><img src="rage3.png"></a>
+
 
 
                 </div>
 
                 <div class="col-4">
 
-                    <form action="neutre.php" method="post">
-                        <button type="submit" name="neutre" class="btn-custom" <?= $delaiNeutre ?>>
-                            <img src="neutre.png">
-                        </button>
-                    </form>
+                    <a href="neutre.php?id=<?php echo $id ?>" id="neutreEnt"><img src="neutre3.png"></a>
+
                 </div>
 
                 <div class="col-4">
 
-                    <form action="yes.php" method="post">
-                        <button type="submit" name="yes" class="btn-custom" <?= $delaiYes ?>>
-                            <img src="yes.png">
-                        </button>
-                    </form>
+                    <a href="yes.php?id=<?php echo $id ?>" id="yesEnt"><img src="yes3.png"></a>
+
                 </div>
 
             </div>
 
-            <h1> <?php if($id > 0) echo $id ?> </h1>
+            <h1> <?php if ($id > 0) echo $id ?> </h1>
         </div>
 
 

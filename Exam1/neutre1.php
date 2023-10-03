@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-//require("ConnexionServeur.php")
+//require("ConnexionServeur.php");
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -9,9 +9,20 @@ if (isset($_GET['id'])) {
     $id = $_POST['id'];
 }
 
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$db = "meow";
+$conn = new mysqli($servername, $username, $password, $db);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 $incrementation = $conn->prepare("UPDATE `evenement` SET `neutreEnt` = `neutreEnt` + 1 WHERE `id` = $id");
 $incrementation->bind_param("i", $id);
 $incrementation->execute();
 $incrementation->close();
 $_SESSION['ClickNeutreEnt'] = time();
-header('Location: indexEntreprise.php');
+header('Location: indexEntreprise.php?id='.$id);
+?>

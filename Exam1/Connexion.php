@@ -66,7 +66,7 @@ session_start();
     <div class="container-fluid align-items-center text-center h-100">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-md-4">
-                <div class="card">
+                <div class="card" style="margin-top: 0px;">
                     <div>
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                             <div class="form-group">
