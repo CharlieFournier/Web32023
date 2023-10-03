@@ -47,9 +47,9 @@ session_start();
     }
     if($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
     ?>
-    <a href="Connexion.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Connexion</button></a>
+    <a href="index.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Connexion</button></a>
 
-    <a href="Connexion.php" class="btn" role="button" id="lienAjout"><img src=""></a>
+    <a href="index.php" class="btn" role="button" id="lienAjout"><img src=""></a>
 
 <div class="container-fluid align-items-center text-center">
 

@@ -76,7 +76,7 @@ session_start();
         } else {
             $lieu = test_input($_POST["lieu"]);
         }
-        
+
         if (empty($_POST['url'])) {
             $nomErreur = "L'url est requis";
             $erreur = true;

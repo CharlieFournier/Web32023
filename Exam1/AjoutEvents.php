@@ -25,7 +25,7 @@ session_start();
     $conn = new mysqli($servername, $username, $password, $db);
 
 
-    $nomEvent = $date = $lieu = $departement = $description = "";
+    $nomEvent = $date = $lieu = $departement = $description =$url= "";
 
 
     $nomErreur = "";
@@ -70,11 +70,17 @@ session_start();
         } else {
             $lieu = test_input($_POST["lieu"]);
         }
+        if (empty($_POST['url'])) {
+            $nomErreur = "L'url  de l'event est requis";
+            $erreur = true;
+        } else {
+            $url = test_input($_POST["url"]);
+        }
 
         //---------------------------------------------------------------------------//
         if ($erreur == false) {
 
-            $sql = "INSERT INTO `evenement` SET `nomEvent` = '$nomEvent', `departement` = '$departement', `date` = '$date', `lieu`='$lieu' , `description`='$description', `positif` = 0, `neutre` = 0, `rage` = 0, `positifEnt` = 0, `neutreEnt` = 0, `rageEnt` = 0";
+            $sql = "INSERT INTO `evenement` SET `nomEvent` = '$nomEvent', `departement` = '$departement', `date` = '$date', `lieu`='$lieu' , `description`='$description','url'='$url' `positif` = 0, `neutre` = 0, `rage` = 0, `positifEnt` = 0, `neutreEnt` = 0, `rageEnt` = 0";
 
             if ($conn->query($sql) === TRUE) {
                 echo "mise a jour effectuer correctement";
@@ -157,6 +163,11 @@ session_start();
                         <div class="col-12">
                             <label for="validationServer01" class="form-label">Description</label>
                             <input type="text" class="form-control is-valid" id="validationServer06" value="" name="description" required>
+
+                        </div>
+                        <div class="col-12">
+                            <label for="validationServer01" class="form-label">Url Image</label>
+                            <input type="text" class="form-control is-valid" id="validationServer07" value="" name="url" required>
 
                         </div>
 
