@@ -59,7 +59,7 @@
     if ($erreur == false) {
     ?>
 
-        <div class="container-fluid h-100 p-0 text-center ">
+        <div class="container-fluid h-100 p-0 text-center">
             <div class="row">
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
@@ -74,7 +74,6 @@
                                 <a class="nav-link active navText" aria-curent="page" href="PageModeration.php">Page d'accueil</a>
                                 <a class="nav-link navText" href="PageUser.php">Users</a>
                                 <a class="nav-link navText" href="PageEvents.php">Évènements</a>
-                                <a class="nav-link navText" href="index.php">Page Vote</a>
                             </div>
                         </div>
                     </div>
@@ -88,8 +87,11 @@
 
                 </div>
 
-                <div class="col-6">
-                    <div class="row p-0">
+                <div class="col-6 test1">
+                <a href="AjoutEvents.php"><button class="btn-index">
+                            Ajout Events
+                        </button></a>
+                    <div class="row p-0 align-items-center">
                         <?php
                         while ($row = $result2->fetch_assoc()) {
                         ?>
