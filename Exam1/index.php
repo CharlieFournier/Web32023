@@ -72,7 +72,7 @@ session_start();
 
                 <div class="col-4">
 
-                    <a href="rage.php?id=<?php echo $id ?>" id="rageEnt"><img src="rage3.png"></a>
+                    <a href="rage.php?id=<?php echo $id ?>" id="rageEnt"><img src="rage.png"></a>
 
 
 
@@ -80,13 +80,13 @@ session_start();
 
                 <div class="col-4">
 
-                    <a href="neutre.php?id=<?php echo $id ?>" id="neutreEnt"><img src="neutre3.png"></a>
+                    <a href="neutre.php?id=<?php echo $id ?>" id="neutreEnt"><img src="neutre.png"></a>
 
                 </div>
 
                 <div class="col-4">
 
-                    <a href="yes.php?id=<?php echo $id ?>" id="yesEnt"><img src="yes3.png"></a>
+                    <a href="yes.php?id=<?php echo $id ?>" id="yesEnt"><img src="yes.png"></a>
 
                 </div>
 
