@@ -77,50 +77,41 @@
         $percentageNeutreEnt = ($totalEntreprise > 0) ? ($row['totalNeutreEnt'] / $totalEntreprise) * 100 : 0;
         $percentageRageEnt = ($totalEntreprise > 0) ? ($row['totalRageEnt'] / $totalEntreprise) * 100 : 0;
 
-
-echo '<div class="pie-chart" style="background: conic-gradient(#8bc34a 0% ' . $percentagePositif . '%, #9e9e9e ' . $percentagePositif . '% ' . ($percentagePositif + $percentageNeutre) . '%, #d32f2f ' . ($percentagePositif + $percentageNeutre) . '% 100%);"></div>';
-
-echo '<div class="pie-chart" style="background: conic-gradient(#001F3F 0% ' . $percentagePositifEnt . '%, #FFFFFF ' . $percentagePositifEnt . '% ' . ($percentagePositifEnt + $percentageNeutreEnt) . '%, #000000 ' . ($percentagePositifEnt + $percentageNeutreEnt) . '% 100%);"></div>';
-
-
         
         ?>
 
-<div class="bar" data-value="<?php echo $row['totalPositif']; ?>">
-    <?php $totalPourLaBarre = $row['totalPositif'] + $row['totalNeutre'] + $row['totalRage']; ?>
-    <div class="inner-bar" style="background-color: #4caf50; width: <?php echo ($totalPourLaBarre > 0) ? ($row['totalPositif'] / $totalPourLaBarre) * 100 : 0; ?>%;">
-    </div>
-    <div class="bar-text">Positif : <?php echo $row['totalPositif']; ?></div>
-</div>
-<div class="bar" data-value="<?php echo $row['totalNeutre']; ?>">
-    <div class="inner-bar" style="background-color: #FFC107; width: <?php echo ($totalPourLaBarre > 0) ? ($row['totalNeutre'] / $totalPourLaBarre) * 100 : 0; ?>%;">
-    </div>
-    <div class="bar-text">Neutre : <?php echo $row['totalNeutre']; ?></div>
-</div>
-<div class="bar" data-value="<?php echo $row['totalRage']; ?>">
-    <div class="inner-bar" style="background-color: #f44336; width: <?php echo ($totalPourLaBarre > 0) ? ($row['totalRage'] / $totalPourLaBarre) * 100 : 0; ?>%;">
-    </div>
-    <div class="bar-text">Negatif : <?php echo $row['totalRage']; ?></div>
-</div>
+<div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Vote</h5>
+                        <div class="pie-chart" style="background: conic-gradient(#8bc34a 0% <?php echo $percentagePositif; ?>%, #9e9e9e <?php echo $percentagePositif; ?>% <?php echo ($percentagePositif + $percentageNeutre); ?>%, #d32f2f <?php echo ($percentagePositif + $percentageNeutre); ?>% 100%);"></div>
+                        <p class="card-text">Nombre de Votes: <?php echo $totalGeneral; ?></p>
+                        <p class="card-text">Nombre de Votes Positif:  <?php echo $row['totalPositif']; ?></p>
+                        <p class="card-text">Nombre de Votes Negatif:  <?php echo $row['totalNeutre']; ?></p>
+                        <p class="card-text">Nombre de Votes Neutre:  <?php echo $row['totalRage']; ?></p>
 
-<?php $totalPourLaBarreEnt = $row['totalPositifEnt'] + $row['totalNeutreEnt'] + $row['totalRageEnt']; ?>
-<div class="bar" data-value="<?php echo $row['totalPositifEnt']; ?>">
-    <div class="inner-bar" style="background-color: #4caf50; width: <?php echo ($totalPourLaBarreEnt > 0) ? ($row['totalPositifEnt'] / $totalPourLaBarreEnt) * 100 : 0; ?>%;">
-    </div>
-    <div class="bar-text">Positif Entreprise: <?php echo $row['totalPositifEnt']; ?></div>
-</div>
-<div class="bar" data-value="<?php echo $row['totalNeutreEnt']; ?>">
-    <div class="inner-bar" style="background-color: #FFC107; width: <?php echo ($totalPourLaBarreEnt > 0) ? ($row['totalNeutreEnt'] / $totalPourLaBarreEnt) * 100 : 0; ?>%;">
-    </div>
-    <div class="bar-text">Neutre Entreprise : <?php echo $row['totalNeutreEnt']; ?></div>
-</div>
-<div class="bar" data-value="<?php echo $row['totalRageEnt']; ?>">
-    <div class="inner-bar" style="background-color: #f44336; width: <?php echo ($totalPourLaBarreEnt > 0) ? ($row['totalRageEnt'] / $totalPourLaBarreEnt) * 100 : 0; ?>%;">
-    </div>
-    <div class="bar-text">Negatif Entreprise: <?php echo $row['totalRageEnt']; ?></div>
-</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Vote Entreprise</h5>
+                        <div class="pie-chart" style="background: conic-gradient(#001F3F 0% <?php echo $percentagePositifEnt; ?>%, #9e9e8e <?php echo $percentagePositifEnt; ?>% <?php echo ($percentagePositifEnt + $percentageNeutreEnt); ?>%, #000000 <?php echo ($percentagePositifEnt + $percentageNeutreEnt); ?>% 100%);"></div>
+                        <p class="card-text">Nombre de Votes Entreprise: <?php echo $totalEntreprise; ?></p>
+                        <p class="card-text">Nombre de Votes Entreprise Positif: <?php echo $row['totalPositifEnt']; ?></p>
+                        <p class="card-text">Nombre de Votes Entreprise Neutre: <?php echo $row['totalNeutreEnt']; ?></p>
+                        <p class="card-text">Nombre de Votes Entreprise Negatif: <?php echo $row['totalRageEnt']; ?></p>
 
-<a href="PageModeration.php"><button class="btn-index">Retour</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <a href="PageModeration.php"><button class="btn-index">Retour</button></a>
 
     </div>
 </body>
