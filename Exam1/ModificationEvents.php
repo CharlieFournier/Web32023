@@ -76,13 +76,8 @@ session_start();
         } else {
             $lieu = test_input($_POST["lieu"]);
         }
-
-        if (empty($_POST['url'])) {
-            $nomErreur = "L'url est requis";
-            $erreur = true;
-        } else {
             $url = test_input($_POST["url"]);
-        }
+        
 
         //---------------------------------------------------------------------------//
         if ($erreur == false) {
@@ -139,8 +134,9 @@ session_start();
             <div class="row">
                 <div class="col-3"></div>
                 <div class="col-6">
-                <img src="<?php echo $row["url"]?>" width="200" height="200">
-
+                <div class="card">
+        <img src="<?php echo $row["url"]? $row["url"] : "https://upload.wikimedia.org/wikipedia/fr/d/dd/C%C3%A9gep_Trois-Rivi%C3%A8res_Logo.jpg";?>" class="card-img-top" alt="Event Image">
+        <div class="card-body">
 
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="was-validated row g-2" novalidate>
 
@@ -183,7 +179,7 @@ session_start();
 
                         </div>
                         <div class="col-12">
-                            <label for="validationServer01" class="form-label">Url Image</label>
+                            <label for="validationServer01" class="form-label">Url Image(Facultatif)</label>
                             <input type="text" class="form-control is-valid" id="validationServer07" value="<?php echo $row["url"]?>" name="url" required>
 
                         </div>
@@ -193,26 +189,21 @@ session_start();
                         <input type="submit">
                     </form>
                 </div>
-                <div class="col-3"></div>
-
-                <div class="col-12 align-items-center h-100">
+                </div>
+                <div class="col-12 align-items h-100">
                     
                     <a href="DeleteEvents.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
-                                delete
+                                Supprimer
                             </button></a>
-                         
-                    </div>
-
-                <div class="col-12 align-items-center h-100">
-                    
-                <a href="Rating.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
+                            <a href="Rating.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
                             Index
                         </button></a>
 
                         <a href="RatingEntreprise.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
-                            IdxEnt
+                            Index Entreprise
                         </button></a>
-                </div>
+                        <a href="statistiques.php?id=<?php echo $row["id"] ?>"><button class="btn-index">Statistiques</button></a>
+                    </div>
             </div>
         </div>
 

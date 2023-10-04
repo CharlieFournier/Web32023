@@ -1,0 +1,19 @@
+body {
+    background-image: url('https://uploads-ssl.webflow.com/601057763f823a0bf65a8071/60f7db5a015ee871435b832e_Article%20Syste%CC%80me%20informatique.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}

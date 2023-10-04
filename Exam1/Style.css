@@ -109,8 +109,61 @@ html {
     max-width: 400px;
     margin: 0 auto;
     margin-top: 100px;
+    margin-bottom: 1rem;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.btn-index {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-index:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+.btn-index:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navText {
+    color: #ccc;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 15px;
+}
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+.card:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 15px;
 }

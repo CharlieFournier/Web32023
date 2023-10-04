@@ -43,11 +43,24 @@ session_start();
 
 
         // Inserer dans la base de données
-        //SI erreurs, on réaffiche le formulaire 
+        //SI erreurs, on réaffiche le formulaire
     }
     if($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
     ?>
-    <a href="index.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Connexion</button></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
+                    <div class="container-fluid navbar p-0">
+
+                        <a class="navbar-brand p-0" href="https://www.cegeptr.qc.ca/" target="_blank"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                            <a href="index.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Connexion</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
 
     <a href="index.php" class="btn" role="button" id="lienAjout"><img src=""></a>
 
