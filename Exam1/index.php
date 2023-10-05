@@ -49,7 +49,7 @@ session_start();
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
                 $_SESSION["connexion"]  = true;
-                header('Location: PageModeration.php'); // Rediriger vers Option.php
+                header('Location: PageModeration.php');
                 exit();
             } else {
                 echo "<h3 style='color:red';>Nom d'usager ou mot de passe incorrect</h3>";                                  #  IMPORTANT
@@ -65,7 +65,7 @@ session_start();
 
     <div class="container-fluid align-items-center text-center h-100">
         <div class="row h-100 justify-content-center align-items-center">
-            <div class="col-md-4">
+            <div class="col-4 align-items-center">
                 <div class="card" style="margin-top: 0px;">
                     <div>
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

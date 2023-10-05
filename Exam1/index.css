@@ -1,4 +1,5 @@
-body {
+body,html {
+    height: 100%;
     background-image: url('https://uploads-ssl.webflow.com/601057763f823a0bf65a8071/60f7db5a015ee871435b832e_Article%20Syste%CC%80me%20informatique.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,5 +16,5 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
 }
