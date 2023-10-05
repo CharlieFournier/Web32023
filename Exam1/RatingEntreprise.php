@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,10 +12,15 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 </head>
+
 <body>
     <?php
-   // require(ConnexionServeur.php);
+    //require("ConnexionServeur.php");
     $nom = $image = "";
+
+
+    $nomErreur = "";
+    $delaiRage = $delaiNeutre = $delaiYes = "";
 
     $id = -1;
 
@@ -24,55 +30,62 @@ session_start();
         $id = $_POST['id'];
     }
 
-    $nomErreur = "";
-
-
     $erreur = false;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Si on entre, on est dans l'envoie du formulaire
-        
-        if(empty($_POST['nom'])){
+
+        if (empty($_POST['nom'])) {
             $nomErreur = "Le nom est requis";
             $erreur = true;
-        }
-        else{
-            $nom = test_input($_POST["nom"]); 
+        } else {
+            $nom = test_input($_POST["nom"]);
         }
         $image = test_input($_POST["image"]);
+        $disabledRage = "";
+
+        if (isset($_SESSION['ClickRage']) && (time() - $_SESSION['ClickRage'] < 2)) {
+            $delaiRage = "disabled";
+        }
+
+        if (isset($_SESSION['ClickNeutre']) && (time() - $_SESSION['ClickNeutre'] < 2)) {
+            $delaiNeutre = "disabled";
+        }
+
+        if (isset($_SESSION['ClickYes']) && (time() - $_SESSION['ClickYes'] < 2)) {
+            $delaiYes = "disabled";
+        }
 
 
         // Inserer dans la base de données
         //SI erreurs, on réaffiche le formulaire
     }
-    if($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
+    if ($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
     ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
-                    <div class="container-fluid navbar p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
+            <div class="container-fluid navbar p-0">
 
-                        <a class="navbar-brand p-0" href="https://www.cegeptr.qc.ca/" target="_blank"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                            <div class="navbar-nav">
-                            <a href="index.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Connexion</button></a>
-                            </div>
-                        </div>
+                <a class="navbar-brand p-0" href="https://www.cegeptr.qc.ca/" target="_blank"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a href="index.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Connexion</button></a>
                     </div>
-                </nav>
+                </div>
+            </div>
+        </nav>
 
-    <a href="index.php" class="btn" role="button" id="lienAjout"><img src=""></a>
+        <div class="container-fluid align-items-center text-center h-100">
 
-<div class="container-fluid align-items-center text-center">
-
-            <div class="row">
+            <div class="row h-100 align-items-center">
 
                 <div class="col-4">
 
                     <a href="rage1.php?id=<?php echo $id ?>" id="rageEnt"><img src="rage.png"></a>
 
-                    
+
 
                 </div>
 
@@ -89,6 +102,7 @@ session_start();
                 </div>
 
             </div>
+
             <!--<h1> ?php if($id > 0) echo $id ?> </h1> -->
         </div>
 
@@ -96,7 +110,8 @@ session_start();
     <?php
     }
 
-    function test_input($data){
+    function test_input($data)
+    {
         $data = trim($data);
         $data = addslashes($data);
         $data = htmlspecialchars($data);
@@ -105,6 +120,7 @@ session_start();
 
     ?>
 
-    
+
 </body>
+
 </html>

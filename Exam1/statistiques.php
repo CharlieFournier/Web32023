@@ -37,7 +37,7 @@
                 </div>
             </div>
         </nav>
-    <div class="container text-center">
+    <div class="container text-center test1">
         <?php
         $id = $_GET['id'] ?? $_POST['id'] ?? null;
         $servername = "localhost";
@@ -86,10 +86,10 @@
                     <div class="card-body">
                         <h5 class="card-title">Vote</h5>
                         <div class="pie-chart" style="background: conic-gradient(#8bc34a 0% <?php echo $percentagePositif; ?>%, #9e9e9e <?php echo $percentagePositif; ?>% <?php echo ($percentagePositif + $percentageNeutre); ?>%, #d32f2f <?php echo ($percentagePositif + $percentageNeutre); ?>% 100%);"></div>
-                        <p class="card-text">Nombre de Votes: <?php echo $totalGeneral; ?></p>
-                        <p class="card-text">Nombre de Votes Positif:  <?php echo $row['totalPositif']; ?></p>
-                        <p class="card-text">Nombre de Votes Negatif:  <?php echo $row['totalNeutre']; ?></p>
-                        <p class="card-text">Nombre de Votes Neutre:  <?php echo $row['totalRage']; ?></p>
+                        <p class="card-text">Nombre de votes étudiants: <?php echo $totalGeneral; ?></p>
+                        <p class="card-text">Nombre de votes positif:  <?php echo $row['totalPositif']; ?></p>
+                        <p class="card-text">Nombre de votes negatif:  <?php echo $row['totalNeutre']; ?></p>
+                        <p class="card-text">Nombre de votes neutre:  <?php echo $row['totalRage']; ?></p>
 
                     </div>
                 </div>
@@ -99,10 +99,10 @@
                     <div class="card-body">
                         <h5 class="card-title">Vote Entreprise</h5>
                         <div class="pie-chart" style="background: conic-gradient(#001F3F 0% <?php echo $percentagePositifEnt; ?>%, #9e9e8e <?php echo $percentagePositifEnt; ?>% <?php echo ($percentagePositifEnt + $percentageNeutreEnt); ?>%, #000000 <?php echo ($percentagePositifEnt + $percentageNeutreEnt); ?>% 100%);"></div>
-                        <p class="card-text">Nombre de Votes Entreprise: <?php echo $totalEntreprise; ?></p>
-                        <p class="card-text">Nombre de Votes Entreprise Positif: <?php echo $row['totalPositifEnt']; ?></p>
-                        <p class="card-text">Nombre de Votes Entreprise Neutre: <?php echo $row['totalNeutreEnt']; ?></p>
-                        <p class="card-text">Nombre de Votes Entreprise Negatif: <?php echo $row['totalRageEnt']; ?></p>
+                        <p class="card-text">Nombre de votes entreprise: <?php echo $totalEntreprise; ?></p>
+                        <p class="card-text">Nombre de votes positif: <?php echo $row['totalPositifEnt']; ?></p>
+                        <p class="card-text">Nombre de votes neutre: <?php echo $row['totalNeutreEnt']; ?></p>
+                        <p class="card-text">Nombre de votes negatif: <?php echo $row['totalRageEnt']; ?></p>
 
                     </div>
                 </div>

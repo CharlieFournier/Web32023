@@ -179,8 +179,8 @@ session_start();
 
                         </div>
                         <div class="col-12">
-                            <label for="validationServer01" class="form-label">Url Image(Facultatif)</label>
-                            <input type="text" class="form-control is-valid" id="validationServer07" value="<?php echo $row["url"]?>" name="url" required>
+                            <label for="validationServer01" class="form-label">Url Image</label>
+                            <input type="text" class="form-control is-valid" id="validationServer07" value="<?php echo $row["url"]?>" name="url">
 
                         </div>
 
