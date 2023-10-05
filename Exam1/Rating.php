@@ -78,32 +78,24 @@ session_start();
         </nav>
 
         <div class="container-fluid align-items-center text-center h-100">
-
-            <div class="row h-100 align-items-center">
-
-                <div class="col-4">
-
-                    <a href="rage.php?id=<?php echo $id ?>" id="rageEnt"><img src="rage.png"></a>
-
-
-
-                </div>
-
-                <div class="col-4">
-
-                    <a href="neutre.php?id=<?php echo $id ?>" id="neutreEnt"><img src="neutre.png"></a>
-
-                </div>
-
-                <div class="col-4">
-
-                    <a href="yes.php?id=<?php echo $id ?>" id="yesEnt"><img src="yes.png"></a>
-
-                </div>
-
-            </div>
-
+    <div class="row h-100 align-items-center">
+        <div class="col-4">
+            <a href="rage.php?id=<?php echo $id ?>" id="rage">
+                <img src="rage.png" class="img-fluid d-block" alt="Rage Image">
+            </a>
         </div>
+        <div class="col-4">
+            <a href="neutre.php?id=<?php echo $id ?>" id="neutre">
+                <img src="neutre.png" class="img-fluid d-block" alt="Neutre Image">
+            </a>
+        </div>
+        <div class="col-4">
+            <a href="yes.php?id=<?php echo $id ?>" id="yes">
+                <img src="yes.png" class="img-fluid d-block" alt="Yes Image">
+            </a>
+        </div>
+    </div>
+</div>
 
 
     <?php
