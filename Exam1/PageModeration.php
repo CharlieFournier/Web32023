@@ -27,6 +27,10 @@
 
     $result2 = $conn2->query($sql2);
 
+    $sql = "SELECT * FROM user";
+
+    $result = $conn2->query($sql);
+
 
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -51,16 +55,12 @@
         if (!$conn && !$conn2) {
             die("Connection failed: " . $mysqli_connect_error());
         }
-
-        $sql = "SELECT * FROM user where user='$user' and password='$password'";
-
-        $result = $conn->query($sql);
     }
     if ($erreur == false) {
     ?>
 
         <div class="container-fluid h-100 p-0 text-center">
-            <div class="row">
+            <div class="row h-100">
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
                     <div class="container-fluid navbar p-0">
@@ -107,6 +107,32 @@
                 </div>
 
                 <div class="col-3"></div>
+                <div class="col-3"></div>
+
+                <div class="col-6 ">
+
+                    <a href="AjoutUser.php"> <button class="btn-index"> Ajout User </button> </a>
+
+                    <div class="row p-0 align-items-center">
+
+                        <?php while ($row = $result->fetch_assoc()) { ?>
+                            <div class="col-4">
+                                <a href="modificationUser.php?id=<?php echo $row["id"] ?>" id="Link">
+
+                                    <div class="card">
+                                        <div>
+                                            <h2><?php echo $row["user"] ?></h2>
+                                        </div>
+                                    </div>
+
+                                </a>
+                            </div>
+                        <?php    } ?>
+
+                    </div>
+
+
+                </div>
 
             </div>
 
