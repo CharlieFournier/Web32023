@@ -76,8 +76,8 @@ session_start();
         } else {
             $lieu = test_input($_POST["lieu"]);
         }
-            $url = test_input($_POST["url"]);
-        
+        $url = test_input($_POST["url"]);
+
 
         //---------------------------------------------------------------------------//
         if ($erreur == false) {
@@ -129,88 +129,90 @@ session_start();
             </div>
         </nav>
 
-        <div class="test1 container-fluid text-center h-80">
-            <div class="row">
+        <div class="test1 container-fluid align-items-center text-center h-100">
+            <div class="row h-100">
                 <div class="col-3"></div>
                 <div class="col-6">
-                <div class="card">
-                    <div class="col-12 text-center">
-        <img src="<?php echo $row["url"]? $row["url"] : "https://upload.wikimedia.org/wikipedia/fr/d/dd/C%C3%A9gep_Trois-Rivi%C3%A8res_Logo.jpg";?>" class="card-img-top" alt="Event Image" style="height: auto; width: 60%">
-        </div>
-        <div class="card-body">
+                    <div class="card align-items-center">
+                        <div class="col-12 text-center" style="padding: 20px;">
+                            <img src="<?php echo $row["url"] ? $row["url"] : "https://upload.wikimedia.org/wikipedia/fr/d/dd/C%C3%A9gep_Trois-Rivi%C3%A8res_Logo.jpg"; ?>" class="card-img-top" alt="Event Image" style="height: auto; width: 60%">
+                        </div>
+                        <div class="card-body">
 
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="was-validated row g-2" novalidate>
+                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="was-validated row g-2" novalidate>
 
-                        <div class="col-md-4">
-                            <label for="validationServer01" class="form-label">nomEvent</label>
-                            <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["nomEvent"] ?>" name="nomEvent" required>
+                                <div class="col-md-4">
+                                    <label for="validationServer01" class="form-label">nomEvent</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["nomEvent"] ?>" name="nomEvent" required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="validationServer01" class="form-label">ID</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer02" value="<?php echo $row["id"] ?>" name="id" readonly="readonly" required>
+                                </div>
+
+                                <div class="col-md-4">
+
+
+                                    <label for="validationServer01" class="form-label">departement</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer03" value="<?php echo $row["departement"] ?>" name="departement" required>
+
+                                </div>
+
+                                <span style="color:red" ;><?php echo $nomErreur; ?></span><br>
+
+                                <div class="col-md-4">
+                                    <label for="validationServer01" class="form-label">date</label>
+                                    <input type="date" class="form-control is-valid" id="validationServer04" value="<?php echo $row["date"] ?>" name="date" required>
+                                </div>
+
+                                <div class="col-md-4"></div>
+
+                                <div class="col-md-4">
+                                    <label for="validationServer01" class="form-label">lieu</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer05" value="<?php echo $row["lieu"] ?>" name="lieu" required>
+
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="validationServer01" class="form-label">Description</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer06" value="<?php echo $row["description"] ?>" name="description" required>
+
+                                </div>
+                                <div class="col-12">
+                                    <label for="validationServer01" class="form-label">Url Image</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer07" value="<?php echo $row["url"] ?>" name="url">
+
+                                </div>
+
+                                <hr>
+
+                                <input type="submit">
+                            </form>
+
                         </div>
 
-                        <div class="col-md-4">
-                            <label for="validationServer01" class="form-label">ID</label>
-                            <input type="text" class="form-control is-valid" id="validationServer02" value="<?php echo $row["id"] ?>" name="id" readonly="readonly" required>
-                        </div>
-
-                        <div class="col-md-4">
-
-
-                            <label for="validationServer01" class="form-label">departement</label>
-                            <input type="text" class="form-control is-valid" id="validationServer03" value="<?php echo $row["departement"] ?>" name="departement" required>
-
-                        </div>
-
-                        <span style="color:red" ;><?php echo $nomErreur; ?></span><br>
-
-                        <div class="col-md-4">
-                            <label for="validationServer01" class="form-label">date</label>
-                            <input type="date" class="form-control is-valid" id="validationServer04" value="<?php echo $row["date"] ?>" name="date" required>
-                        </div>
-
-                        <div class="col-md-4"></div>
-
-                        <div class="col-md-4">
-                            <label for="validationServer01" class="form-label">lieu</label>
-                            <input type="text" class="form-control is-valid" id="validationServer05" value="<?php echo $row["lieu"] ?>" name="lieu" required>
-
-                        </div>
-
-                        <div class="col-12">
-                            <label for="validationServer01" class="form-label">Description</label>
-                            <input type="text" class="form-control is-valid" id="validationServer06" value="<?php echo $row["description"] ?>" name="description" required>
-
-                        </div>
-                        <div class="col-12">
-                            <label for="validationServer01" class="form-label">Url Image</label>
-                            <input type="text" class="form-control is-valid" id="validationServer07" value="<?php echo $row["url"]?>" name="url">
-
-                        </div>
-
-                        <hr>
-
-                        <input type="submit">
-                    </form>
-                </div>
-                </div>
-                <div class="col-12 align-items-center">
-                    
-                    <a href="DeleteEvents.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
-                                Supprimer
-                            </button></a>
-                            <a href="Rating.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
-                            Index
-                        </button></a>
-
-                        <a href="RatingEntreprise.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
-                            Index Entreprise
-                        </button></a>
-                        <a href="statistiques.php?id=<?php echo $row["id"] ?>"><button class="btn-index">Statistiques</button></a>
                     </div>
+                    <div class="col-12 h-5 align-items-center" style="padding: 10px;">
+
+                        <a href="Rating.php?id=<?php echo $row["id"] ?>" style="text-decoration: none;"> <button class="btn-index btn-modif"> Index </button> </a>
+
+                        <a href="RatingEntreprise.php?id=<?php echo $row["id"] ?>" style="text-decoration: none;"> <button class="btn-index btn-modif"> Index Entreprise </button> </a>
+
+                    </div>
+
+                    <div class="col-12 h-5 align-items-center" style="padding: 10px;">
+
+                        <a href="DeleteEvents.php?id=<?php echo $row["id"] ?>" style="text-decoration: none;"> <button class="btn-index btn-modif"> Supprimer </button> </a>
+
+                        <a href="statistiques.php?id=<?php echo $row["id"] ?>" style="text-decoration: none;"> <button class="btn-index btn-modif">Statistiques</button> </a>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
-
-
-                    
-
 
     <?php
     }

@@ -9,13 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistiques</title>
     <style>
-        .pie-chart {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            margin: 20px;
-            display: inline-block;
-        }
     </style>
 </head>
 
@@ -109,8 +102,9 @@
         </div>
 
 
-
-        <a href="PageModeration.php"><button class="btn-index">Retour</button></a>
+        <div class="col-12 align-items-center" style="padding: 20px;">
+        <a href="modificationEvents.php?id=<?php echo $id ?>"><button class="btn-index">Retour</button></a>
+        </div>
 
     </div>
 </body>
