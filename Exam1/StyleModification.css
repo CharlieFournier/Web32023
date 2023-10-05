@@ -3,7 +3,6 @@ html {
     height: 100%;
     width: 100%;
     background-color: bisque; /* Couleur bleu marine */
-
 }
 
 .navbar {
@@ -62,9 +61,8 @@ html {
     transform: translateY(-5px);
 }
 
-.card-img-top {
-    width: 100%;
-    height: auto;
+.h-80 {
+    height: 80%;
 }
 
 .card-body {

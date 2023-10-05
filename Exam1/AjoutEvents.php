@@ -25,7 +25,7 @@ session_start();
     $conn = new mysqli($servername, $username, $password, $db);
 
 
-    $nomEvent = $date = $lieu = $departement = $description =$url= "";
+    $nomEvent = $date = $lieu = $departement = $description = $url = "";
 
 
     $nomErreur = "";
@@ -111,10 +111,9 @@ session_start();
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active navText" aria-curent="page" href="PageModeration.php">Page d'accueil</a>
+                        <a class="nav-link navText" aria-curent="page" href="PageModeration.php">Page d'accueil</a>
                         <a class="nav-link navText" href="PageUser.php">Users</a>
                         <a class="nav-link navText" href="PageEvents.php">Évènements</a>
-                        <a class="nav-link navText" href="index.php">Page Vote</a>
                     </div>
                 </div>
             </div>

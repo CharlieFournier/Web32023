@@ -124,18 +124,19 @@ session_start();
                         <a class="nav-link active navText" aria-curent="page" href="PageModeration.php">Page d'accueil</a>
                         <a class="nav-link navText" href="PageUser.php">Users</a>
                         <a class="nav-link navText" href="PageEvents.php">Évènements</a>
-                        <a class="nav-link navText" href="index.php">Page Vote</a>
                     </div>
                 </div>
             </div>
         </nav>
 
-        <div class="test1 container-fluid text-center h-100 ">
+        <div class="test1 container-fluid text-center h-80">
             <div class="row">
                 <div class="col-3"></div>
                 <div class="col-6">
                 <div class="card">
-        <img src="<?php echo $row["url"]? $row["url"] : "https://upload.wikimedia.org/wikipedia/fr/d/dd/C%C3%A9gep_Trois-Rivi%C3%A8res_Logo.jpg";?>" class="card-img-top" alt="Event Image">
+                    <div class="col-12 text-center">
+        <img src="<?php echo $row["url"]? $row["url"] : "https://upload.wikimedia.org/wikipedia/fr/d/dd/C%C3%A9gep_Trois-Rivi%C3%A8res_Logo.jpg";?>" class="card-img-top" alt="Event Image" style="height: auto; width: 60%">
+        </div>
         <div class="card-body">
 
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="was-validated row g-2" novalidate>
@@ -190,7 +191,7 @@ session_start();
                     </form>
                 </div>
                 </div>
-                <div class="col-12 align-items h-100">
+                <div class="col-12 align-items-center">
                     
                     <a href="DeleteEvents.php?id=<?php echo $row["id"] ?>"><button class="btn-index">
                                 Supprimer
