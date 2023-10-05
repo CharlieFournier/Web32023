@@ -62,7 +62,7 @@
         <div class="container-fluid h-100 p-0 text-center">
             <div class="row">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
                     <div class="container-fluid navbar p-0">
 
                         <a class="navbar-brand p-0" href="https://www.cegeptr.qc.ca/" target="_blank"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
@@ -71,7 +71,7 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
-                                <a class="nav-link active navText" aria-curent="page" href="PageModeration.php" >Page d'accueil</a>
+                                <a class="nav-link active navText" aria-curent="page" href="PageModeration.php">Page d'accueil</a>
                                 <a class="nav-link navText" href="PageUser.php">Users</a>
                                 <a class="nav-link navText" href="PageEvents.php">Évènements</a>
                             </div>
@@ -79,44 +79,38 @@
                     </div>
                 </nav>
 
-
-
-
-
-                <div class="col-3">
-
-                </div>
+                <div class="col-3"></div>
 
                 <div class="col-6 test1">
-                <a href="AjoutEvents.php"><button class="btn-index">
-                            Ajout Events
-                        </button></a>
+
+                    <a href="AjoutEvents.php"> <button class="btn-index"> Ajout Events </button> </a>
+
                     <div class="row p-0 align-items-center">
-                        <?php
-                        while ($row = $result2->fetch_assoc()) {
-                        ?>
+
+                        <?php while ($row = $result2->fetch_assoc()) { ?>
                             <div class="col-4">
                                 <a href="modificationEvents.php?id=<?php echo $row["id"] ?>" id="Link">
+
                                     <div class="card">
                                         <div>
                                             <h2><?php echo $row["nomEvent"] ?></h2>
                                         </div>
                                     </div>
+
                                 </a>
                             </div>
                         <?php    } ?>
+
                     </div>
 
 
                 </div>
 
-                <div class="col-3">
+                <div class="col-3"></div>
 
-                </div>
             </div>
-        </div>
 
-    <?php } ?>
+        <?php } ?>
 </body>
 
 </html>
