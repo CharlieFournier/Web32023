@@ -60,11 +60,12 @@
     ?>
 
         <div class="container-fluid h-100 p-0 text-center">
+        <div class="col-12 h-1 background-details navbarHeader"></div>
             <div class="row h-100">
 
                 <div class="col-12" style="padding-left: 40px;">
-                    <div class="container-fluid p-0">
-                        <div class="row">
+                    <div class="container-fluid p-0 h-100">
+                        <div class="row h-100">
                             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
                                 <div class="container-fluid navbar p-0">
 
@@ -75,14 +76,16 @@
                                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                                         <div class="navbar-nav">
                                             <a class="nav-link active navText" aria-curent="page" href="PageModeration.php">Page d'accueil</a>
-                                            <a class="nav-link navText" href="AjoutUser.php">Users</a>
-                                            <a class="nav-link navText" href="AjoutEvents.php">Évènements</a>
+                                            <a class="nav-link navText" href="AjoutUser.php"> Ajout Users</a>
+                                            <a class="nav-link navText" href="AjoutEvents.php"> Ajout Évènements</a>
                                         </div>
                                     </div>
                                 </div>
                             </nav>
 
-                            <div class="col-9 h-100 navbarHeader text-start card card-conteneur p-0" id="cardEvent1">
+                            
+
+                            <div class="col-9 h-100 text-start card card-conteneur p-0 navbarHeader2" id="cardEvent1">
 
                                 <div class="col-12 card card-event-design">
                                     <h1 id="text-event"> ÉVÈNEMENTS </h1>
@@ -119,11 +122,11 @@
 
 
 
-                            <div class="col-3 p-0">
+                            <div class="col-3 p-0 navbarHeader2">
                                 <div class="container-fluid p-0">
                                     <div class="row">
                                         <div class="col-1 h-100"></div>
-                                        <div class="col-10 h-100 card card-conteneur navbarHeader p-0" id="cardEvent2">
+                                        <div class="col-10 h-100 card card-conteneur p-0" id="cardEvent2">
 
                                             <div class="col-12 card card-event-design text-start ">
                                                 <h1 id="text-event"> USERS </h1>
@@ -160,11 +163,13 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
 
             </div>
+            <div class="col-12 h-3 background-details2 navbarHeader"></div>
         </div>
 
     <?php } ?>
