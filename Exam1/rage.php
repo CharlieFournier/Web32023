@@ -9,11 +9,13 @@ if (isset($_GET['id'])) {
     $id = $_POST['id'];
 }
 
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "root";
 $password = "root";
 $db = "meow";
-$conn = new mysqli($servername, $username, $password, $db);
+$conn = new mysqli($servername, $username, $password, $db);*/
+
+require("ConnexionServeur.php");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

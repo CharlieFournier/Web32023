@@ -41,12 +41,14 @@ session_start();
         //SI erreurs, on réaffiche le formulaire
     }
 
-    $servername = "localhost";
+    /*$servername = "localhost";
     $username = "root";
     $password = "root";
     $db = "meow";
 
-    $conn = new mysqli($servername, $username, $password, $db);
+    $conn = new mysqli($servername, $username, $password, $db);*/
+
+    require("ConnexionServeur.php");
 
 
     $sql = "SELECT * FROM evenement";

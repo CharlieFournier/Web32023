@@ -23,13 +23,14 @@
 
 
 
-    $servername = "localhost";
+   /* $servername = "localhost";
     $username = "root";
     $password = "root";
     $db = "meow";
     // create connection
-    $conn = new mysqli($servername, $username, $password, $db);
+    $conn = new mysqli($servername, $username, $password, $db); */
 
+    require("connexionserveur.php");
 
     //On crée les variables du formulaire vide
     $prenom = $nom = $mdp = $url = "";

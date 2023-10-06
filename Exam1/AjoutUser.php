@@ -15,12 +15,14 @@ session_start();
 
 <body>
     <?php
-    $servername = "localhost";
+    /*$servername = "localhost";
     $username = "root";
     $password = "root";
     $db = "meow";
 
-    $conn = new mysqli($servername, $username, $password, $db);
+    $conn = new mysqli($servername, $username, $password, $db);*/
+
+    require("ConnexionServeur.php");
 
     $user = $email = $password = $ip="";
 
@@ -62,7 +64,7 @@ session_start();
 
 
         if ($erreur == false) {
-
+            $password = sha1($password);
             $sql = "INSERT INTO `user` SET `user` = '$user', `email` = '$email', `password` = '$password',`ip`='$ip'";
 
             if ($conn->query($sql) === TRUE) {

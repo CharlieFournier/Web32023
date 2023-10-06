@@ -23,12 +23,14 @@ session_start();
     }
 
 
-    $servername = "localhost";
+    /*$servername = "localhost";
     $username = "root";
     $password = "root";
     $db = "meow";
 
-    $conn = new mysqli($servername, $username, $password, $db);
+    $conn = new mysqli($servername, $username, $password, $db);*/
+
+    require("ConnexionServeur.php");
 
 
     $nomEvent = $date = $lieu = $departement = $description = $url = "";
@@ -76,7 +78,7 @@ session_start();
         } else {
             $lieu = test_input($_POST["lieu"]);
         }
-        
+
         $url = test_input($_POST["url"]);
 
 

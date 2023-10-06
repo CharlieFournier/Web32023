@@ -29,21 +29,23 @@ session_start();
 
         $password = sha1($password, false);
 
-        $servername = "localhost";
+       /* $servername = "localhost";
         $username = "root";
         $passworddb = "root";
         $db = "meow";
 
-        $conn = new mysqli($servername, $username, $passworddb, $db);
+        $conn = new mysqli($servername, $username, $passworddb, $db); */
 
-        if (!$conn) {
+        require("connexionServeur.php");
+
+       /*if (!$conn) {
             die("Connection failed: " . $mysqli_connect_error());
-        }
+        } */
 
         $sql = "SELECT * FROM user where user='$user' and password='$password'";
 
         $result = $conn->query($sql);
-
+        
         if (isset($result)) {
 
             if ($result->num_rows > 0) {

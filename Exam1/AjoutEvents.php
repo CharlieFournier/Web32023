@@ -17,12 +17,15 @@ session_start();
     <?php
 
 
-    $servername = "localhost";
+    /*$servername = "localhost";
     $username = "root";
     $password = "root";
     $db = "meow";
 
-    $conn = new mysqli($servername, $username, $password, $db);
+
+    $conn = new mysqli($servername, $username, $password, $db); */
+
+    require("ConnexionServeur.php");
 
 
     $nomEvent = $date = $lieu = $departement = $description = $url = "";

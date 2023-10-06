@@ -6,12 +6,13 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 }
 
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "root";
 $password = "root";
 $db = "meow";
 // create connection
-$conn = new mysqli($servername, $username, $password, $db);
+$conn = new mysqli($servername, $username, $password, $db);*/
+require("ConnexionServeur.php");
 
 if ($erreur == false) {
 

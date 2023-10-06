@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 03 Octobre 2023 à 16:04
+-- Généré le :  Ven 06 Octobre 2023 à 13:31
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -33,6 +33,7 @@ CREATE TABLE `evenement` (
   `date` date NOT NULL,
   `lieu` varchar(20) NOT NULL,
   `departement` varchar(20) NOT NULL,
+  `url` varchar(255) NOT NULL,
   `positif` int(3) NOT NULL,
   `neutre` int(3) NOT NULL,
   `rage` int(3) NOT NULL,
@@ -45,13 +46,9 @@ CREATE TABLE `evenement` (
 -- Contenu de la table `evenement`
 --
 
-INSERT INTO `evenement` (`id`, `nomEvent`, `description`, `date`, `lieu`, `departement`, `positif`, `neutre`, `rage`, `positifEnt`, `neutreEnt`, `rageEnt`) VALUES
-(1, 'Pizza Stage #1', 'AH test ', '2023-09-12', 'sous-sol', 'aucun', 0, 0, 0, 0, 0, 0),
-(2, 'Pizza Stage #2', 'AH test ', '2023-09-12', 'sous-sol', 'aucun', 0, 0, 0, 0, 0, 0),
-(3, 'Pizza Stage #3', 'AH test ', '2023-09-12', 'sous-sol', 'aucun', 0, 0, 0, 0, 0, 0),
-(4, 'Pizza Stage #4', 'AH test ', '2023-09-12', 'sous-sol', 'aucun', 0, 0, 0, 0, 0, 0),
-(5, 'Pizza Stage #5', 'AH test ', '2023-09-12', 'sous-sol', 'aucun', 3, 2, 1, 3, 2, 1),
-(6, 'Pizza Stage #6', 'AH test ', '2023-09-12', 'sous-sol', 'aucun', 0, 0, 0, 0, 0, 0);
+INSERT INTO `evenement` (`id`, `nomEvent`, `description`, `date`, `lieu`, `departement`, `url`, `positif`, `neutre`, `rage`, `positifEnt`, `neutreEnt`, `rageEnt`) VALUES
+(1, 'Pizza Stage #1', 'AH test ', '2023-09-12', 'sous-sol', 'aucun', '', 0, 3, 3, 9, 12, 8),
+(10, '123', '123', '2023-10-26', '123', '123', '', 0, 0, 0, 0, 0, 0);
 
 --
 -- Index pour les tables exportées
@@ -71,7 +68,7 @@ ALTER TABLE `evenement`
 -- AUTO_INCREMENT pour la table `evenement`
 --
 ALTER TABLE `evenement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

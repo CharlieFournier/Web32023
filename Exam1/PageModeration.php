@@ -16,20 +16,22 @@
 
     $erreur = false;
 
-    $servername2 = "localhost";
+    /*$servername2 = "localhost";
     $username2 = "root";
     $password2 = "root";
     $db2 = "meow";
 
-    $conn2 = new mysqli($servername2, $username2, $password2, $db2);
+    $conn2 = new mysqli($servername2, $username2, $password2, $db2);*/
+
+    require("ConnexionServeur.php");
 
     $sql2 = "SELECT * FROM evenement";
 
-    $result2 = $conn2->query($sql2);
+    $result2 = $conn->query($sql2);
 
     $sql = "SELECT * FROM user";
 
-    $result = $conn2->query($sql);
+    $result = $conn->query($sql);
 
 
     if (isset($_GET['id'])) {
@@ -45,14 +47,14 @@
 
         $password = sha1($password, false);
 
-        $servername = "localhost";
+        /*$servername = "localhost";
         $username = "root";
         $passworddb = "root";
         $db = "meow";
 
-        $conn = new mysqli($servername, $username, $passworddb, $db);
+        $conn = new mysqli($servername, $username, $passworddb, $db); */
 
-        if (!$conn && !$conn2) {
+        if (!$conn) {
             die("Connection failed: " . $mysqli_connect_error());
         }
     }

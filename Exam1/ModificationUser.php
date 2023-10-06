@@ -21,12 +21,14 @@ session_start();
         $id = $_POST['id'];
     }
 
-    $servername = "localhost";
+    /*$servername = "localhost";
     $username = "root";
     $password = "root";
     $db = "meow";
 
-    $conn = new mysqli($servername, $username, $password, $db);
+    $conn = new mysqli($servername, $username, $password, $db);*/
+    
+    require("ConnexionServeur.php");
 
     $user = $email = $password = $ip = "";
 
@@ -69,10 +71,10 @@ session_start();
 
         if ($erreur == false) {
 
-            $sql = "UPDATE `user` SET `user` = '$user', `email` = '$email', `password` = '$password', `ip` = '$ip' WHERE `user`.`id` = $id;";
+            $sql = "UPDATE `user` SET `user` = '$user', `email` = '$email', `password` = '$password', `ip` = '$ip' WHERE `user`.`id` = '$id'";
 
             if ($conn->query($sql) === TRUE) {
-                echo "mise a jour effectuee correctement";
+                echo "mise a jour effectue correctement";
                 header('Location: ./PageModeration.php?action=modifier');
             } else {
                 echo "erreur dans la mise a jour " . $conn->error;

@@ -32,7 +32,7 @@
     <div class="container text-center test1">
         <?php
         $id = $_GET['id'] ?? $_POST['id'] ?? null;
-        $servername = "localhost";
+        /*$servername = "localhost";
         $username = "root";
         $password = "root";
         $db = "meow";
@@ -40,7 +40,8 @@
         $conn = new mysqli($servername, $username, $password, $db);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
-        }
+        } */
+        require("ConnexionServeur.php");
 
         $sql = "SELECT
     SUM(positif) as totalPositif,
@@ -80,8 +81,8 @@
                         <div class="pie-chart" style="background: conic-gradient(#8bc34a 0% <?php echo $percentagePositif; ?>%, #9e9e9e <?php echo $percentagePositif; ?>% <?php echo ($percentagePositif + $percentageNeutre); ?>%, #d32f2f <?php echo ($percentagePositif + $percentageNeutre); ?>% 100%);"></div>
                         <p class="card-text">Nombre de votes étudiants: <?php echo $totalGeneral; ?></p>
                         <p class="card-text">Nombre de votes positif: <?php echo $row['totalPositif']; ?></p>
-                        <p class="card-text">Nombre de votes negatif: <?php echo $row['totalNeutre']; ?></p>
-                        <p class="card-text">Nombre de votes neutre: <?php echo $row['totalRage']; ?></p>
+                        <p class="card-text">Nombre de votes neutre: <?php echo $row['totalNeutre']; ?></p>
+                        <p class="card-text">Nombre de votes negatif: <?php echo $row['totalRage']; ?></p>
 
                     </div>
                 </div>
