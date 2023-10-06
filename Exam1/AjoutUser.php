@@ -22,7 +22,7 @@ session_start();
 
     $conn = new mysqli($servername, $username, $password, $db);
 
-    $nom = $email = $pswd = $machine = "";
+    $user = $email = $pswd = $machine = "";
 
 
     $nomErreur = "";
@@ -33,8 +33,8 @@ session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Si on entre, on est dans l'envoie du formulaire
 
-        if (empty($_POST['nom'])) {
-            $nomErreur = "Le nom est requis";
+        if (empty($_POST['user'])) {
+            $userErreur = "Le nom est requis";
             $erreur = true;
         } else {
             $user = test_input($_POST["nom"]);
@@ -49,7 +49,7 @@ session_start();
             $passwordErreur = "Le mot de passe est requis";
             $erreur = true;
         } else {
-            $pswd = test_input($_POST["pswd"]);
+            $password = test_input($_POST["pswd"]);
         }
         if (empty($_POST['machine'])) {
             $machineErreur = "La machine est requise";
@@ -62,13 +62,13 @@ session_start();
 
         if ($erreur == false) {
 
-            $sql = "INSERT INTO `user` SET `nom` = '$user', `email` = '$email', `password` = '$pswd' , `machine`='$machine'";
+            $sql = "INSERT INTO `user` SET `user` = '$user', `email` = '$email', `password` = '$password' , `machine`='$machine'";
 
             if ($conn->query($sql) === TRUE) {
-                echo "mise a jour effectuer correctement";
+                echo "mise a jour effectuee correctement";
                 header('Location: ./PageModeration.php?action=modifier');
             } else {
-                echo "erreur dans la mise a jour" . $conn->error;
+                echo "erreur dans la mise a jour " . $conn->error;
             }
 
             if (!$conn) {
