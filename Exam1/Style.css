@@ -2,8 +2,10 @@ body,
 html {
     height: 100%;
     width: 100%;
-    background-color: bisque; /* Couleur bleu marine */
+}
 
+.taille-card {
+    height: 200px;
 }
 
 .navbar {
