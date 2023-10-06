@@ -19,7 +19,7 @@ if ($erreur == false) {
 
     if ($conn->query($sql) === TRUE) {
         echo "mise a jour effectuer correctement";
-        header('Location: PageModeration.php?action=delete');
+        header('Location: PageModeration.php');
     } else {
         echo "erreur dans la mise a jour" . $conn->error;
     }

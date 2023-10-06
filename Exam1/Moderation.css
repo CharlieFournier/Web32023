@@ -3,12 +3,20 @@ body, html {
     width: 100%;
 }
 
+#emote {
+    border-radius: 36px;
+}
+
 .h-1 {
     height: 1%;
 }
 
 .h-3 {
     height: 3%;
+}
+
+.h-70 {
+    height: 70%;
 }
 
 #logoNavBar {
@@ -39,8 +47,8 @@ body, html {
     padding:8px;
     background-color: #082d74;
     border-radius: 35px;
-
 }
+
 #text-event {
    color: white;
 }

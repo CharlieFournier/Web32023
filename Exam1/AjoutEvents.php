@@ -70,12 +70,9 @@ session_start();
         } else {
             $lieu = test_input($_POST["lieu"]);
         }
-        if (empty($_POST['url'])) {
-            $nomErreur = "L'url  de l'event est requis";
-            $erreur = true;
-        } else {
+
             $url = test_input($_POST["url"]);
-        }
+
 
         //---------------------------------------------------------------------------//
         if ($erreur == false) {

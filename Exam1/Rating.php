@@ -65,7 +65,7 @@ session_start();
         <div class="container-fluid h-100 p-0 text-center">
             <div class="col-12 h-1 background-details navbarHeader"></div>
             <div class="row h-100">
-                <div class="col-12" style="padding-left: 40px;">
+                <div class="col-12" style="padding-left: 40px; padding-right: 40px;">
                     <div class="container-fluid p-0 h-100">
                         <div class="row h-100">
                             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
@@ -81,29 +81,30 @@ session_start();
                                     </div>
                                 </div>
                             </nav>
-                            <div class="col-9 h-100 text-start card card-conteneur p-0 navbarHeader2" id="cardEvent1">
+                            <div class="col-12 h-100 text-start card card-conteneur p-0 navbarHeader2" id="cardEvent1">
                                 <div class="col-12 card card-event-design">
                                     <h1 id="text-event"> Veuillez nous evaluer </h1>
                                 </div>
-                                <div class="container-fluid align-items-center text-center h-100">
+                                <div class="container-fluid align-items-center text-center h-100" style="padding-top:24px">
                                     <div class="row h-100 align-items-center">
                                         <div class="col-4">
                                             <a href="rage.php?id=<?php echo $id ?>" id="rage">
-                                                <img src="rage4.png" class="img-fluid d-block btn-custom" alt="Rage Image">
+                                                <img src="rage4.png" class="img-fluid d-block btn-custom" id="emote" alt="Rage Image">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="neutre.php?id=<?php echo $id ?>" id="neutre">
-                                                <img src="neutre4.png" class="img-fluid d-block btn-custom" alt="Neutre Image">
+                                                <img src="neutre4.png" class="img-fluid d-block btn-custom" id="emote" alt="Neutre Image">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="yes.php?id=<?php echo $id ?>" id="yes">
-                                                <img src="yes4.png" class="img-fluid d-block btn-custom" alt="Yes Image">
+                                                <img src="yes4.png" class="img-fluid d-block btn-custom" id="emote" alt="Yes Image">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-12 h-3 background-details2 navbarHeader"></div>
                             </div>
 
 

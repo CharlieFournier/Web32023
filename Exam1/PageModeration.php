@@ -122,9 +122,9 @@
 
 
 
-                            <div class="col-3 p-0 navbarHeader2">
-                                <div class="container-fluid p-0">
-                                    <div class="row">
+                            <div class="col-3 p-0 navbarHeader2 h-100">
+                                <div class="container-fluid p-0 h-100">
+                                    <div class="row h-100">
                                         <div class="col-1 h-100"></div>
                                         <div class="col-10 h-100 card card-conteneur p-0" id="cardEvent2">
 
@@ -169,7 +169,7 @@
                 </div>
 
             </div>
-            <div class="col-12 h-3 background-details2 navbarHeader"></div>
+            
         </div>
 
     <?php } ?>

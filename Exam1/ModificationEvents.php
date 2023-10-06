@@ -76,6 +76,7 @@ session_start();
         } else {
             $lieu = test_input($_POST["lieu"]);
         }
+        
         $url = test_input($_POST["url"]);
 
 
