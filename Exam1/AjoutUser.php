@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ session_start();
 
     $conn = new mysqli($servername, $username, $password, $db);
 
-    $user = $email = $pswd = $machine = "";
+    $user = $email = $password = $ip="";
 
 
     $nomErreur = "";
@@ -37,7 +37,7 @@ session_start();
             $userErreur = "Le nom est requis";
             $erreur = true;
         } else {
-            $user = test_input($_POST["nom"]);
+            $user = test_input($_POST["user"]);
         }
         if (empty($_POST['email'])) {
             $emailErreur = "L'email' est requis";
@@ -45,24 +45,25 @@ session_start();
         } else {
             $email = test_input($_POST["email"]);
         }
-        if (empty($_POST['pswd'])) {
+        if (empty($_POST['password'])) {
             $passwordErreur = "Le mot de passe est requis";
             $erreur = true;
         } else {
-            $password = test_input($_POST["pswd"]);
+            $password = test_input($_POST["password"]);
         }
-        if (empty($_POST['machine'])) {
-            $machineErreur = "La machine est requise";
+        if (empty($_POST['ip'])) {
+            $ipErreur = "L'ip est requise";
             $erreur = true;
         } else {
-            $machine = test_input($_POST["machine"]);
+            $ip = test_input($_POST["ip"]);
         }
 
+        
 
 
         if ($erreur == false) {
 
-            $sql = "INSERT INTO `user` SET `user` = '$user', `email` = '$email', `password` = '$password' , `machine`='$machine'";
+            $sql = "INSERT INTO `user` SET `user` = '$user', `email` = '$email', `password` = '$password',`ip`='$ip'";
 
             if ($conn->query($sql) === TRUE) {
                 echo "mise a jour effectuee correctement";
@@ -107,25 +108,25 @@ session_start();
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="was-validated row g-2" novalidate>
                         <div class="col-md-4">
                             <label for="validationServer01" class="form-label">Nom utilisateur</label>
-                            <input type="text" class="form-control is-valid" id="validationServer01" value="" name="nom" required>
+                            <input type="text" class="form-control is-valid" id="validationServer01" value="" name="user" required>
                         </div>
                         <div class="col-md-4">
                             <label for="validationServer01" class="form-label">Email</label>
                             <input type="text" class="form-control is-valid" id="validationServer02" value="" name="email" required>
                         </div>
-                        <span style="color:red" ;><?php echo $nomErreur; ?></span><br>
 
                         <div class="col-md-4">
                             <label for="validationServer01" class="form-label">Mot de passe</label>
-                            <input type="text" class="form-control is-valid" id="validationServer03" value="" name="pswd" required>
+                            <input type="text" class="form-control is-valid" id="validationServer03" value="" name="password" required>
                         </div>
                         <div class="col-md-4">
-                            <label for="validationServer01" class="form-label">Machine</label>
-                            <input type="text" class="form-control is-valid" id="validationServer04" value="" name="machine" required>
+                            <label for="validationServer01" class="form-label">ip</label>
+                            <input type="text" class="form-control is-valid" id="validationServer04" value="" name="ip" required>
                         </div>
                         <div class="col-md-4">
                             <input type="submit">
                         </div>
+                        <span style="color:red" ;><?php echo $nomErreur; ?></span><br>
 
                     </form>
                 </div>
