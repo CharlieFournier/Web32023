@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ session_start();
 
     $conn = new mysqli($servername, $username, $password, $db);
 
-    $user = $email = $password = $ip="";
+    $user = $email = $password = $ip = "";
 
 
     $nomErreur = "";
@@ -64,7 +64,7 @@ session_start();
             $ip = test_input($_POST["ip"]);
         }
 
-        
+
 
 
         if ($erreur == false) {
@@ -96,9 +96,9 @@ session_start();
 
         if ($erreur == true) {
 
-            ?>
-            <?php } ?>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
+    ?>
+        <?php } ?>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
             <div class="container-fluid navbar p-0">
 
                 <a class="navbar-brand p-0" href="https://www.cegeptr.qc.ca/" target="_blank"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
@@ -108,8 +108,8 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active navText" aria-curent="page" href="PageModeration.php">Page d'accueil</a>
-                        <a class="nav-link navText" href="PageUser.php">Users</a>
-                        <a class="nav-link navText" href="PageEvents.php">Évènements</a>
+                        <a class="nav-link navText" href="AjoutUser.php"> Ajout Users</a>
+                        <a class="nav-link navText" href="AjoutEvents.php"> Ajout Évènements</a>
                     </div>
                 </div>
             </div>
@@ -121,49 +121,49 @@ session_start();
                 <div class="col-3"></div>
                 <div class="col-6">
                     <div class="card align-items-center">
-                    <div class="card-body">
+                        <div class="card-body">
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="was-validated row g-2" novalidate>
-                        <div class="col-md-4">
-                            <label for="validationServer01" class="form-label">Nom utilisateur</label>
-                            <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["user"] ?>" name="user" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="validationServer01" class="form-label">Email</label>
-                            <input type="text" class="form-control is-valid" id="validationServer02" value="<?php echo $row["email"] ?>" name="email" required>
-                        </div>
+                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="was-validated row g-2" novalidate>
+                                <div class="col-md-4">
+                                    <label for="validationServer01" class="form-label">Nom utilisateur</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer01" value="<?php echo $row["user"] ?>" name="user" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationServer01" class="form-label">Email</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer02" value="<?php echo $row["email"] ?>" name="email" required>
+                                </div>
 
-                        <div class="col-md-4">
-                            <label for="validationServer01" class="form-label">Mot de passe</label>
-                            <input type="text" class="form-control is-valid" id="validationServer03" value="<?php echo $row["password"] ?>" name="password" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="validationServer01" class="form-label">ip</label>
-                            <input type="text" class="form-control is-valid" id="validationServer04" value="<?php echo $row["ip"] ?>" name="ip" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input type="submit">
-                            <a href="DeleteUser.php?id=<?php echo $row["id"] ?>" style="text-decoration: none;"> <button class="btn-index btn-modif"> Supprimer </button> </a>
+                                <div class="col-md-4">
+                                    <label for="validationServer01" class="form-label">Mot de passe</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer03" value="<?php echo $row["password"] ?>" name="password" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationServer01" class="form-label">ip</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer04" value="<?php echo $row["ip"] ?>" name="ip" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="submit">
+                                    <a href="DeleteUser.php?id=<?php echo $row["id"] ?>" style="text-decoration: none;"> <button class="btn-index btn-modif"> Supprimer </button> </a>
 
-                        </div>
-                        <span style="color:red" ;><?php echo $nomErreur; ?></span><br>
+                                </div>
+                                <span style="color:red" ;><?php echo $nomErreur; ?></span><br>
 
-                    </form>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <?php }
-    
+            <?php }
 
-function test_input($data)
-{
-    $data = trim($data);
-    $data = addslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
 
-?>
+        function test_input($data)
+        {
+            $data = trim($data);
+            $data = addslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+
+            ?>
 
 
 </body>

@@ -83,7 +83,7 @@ session_start();
 
                 <div class="col-4">
 
-                    <a href="rage1.php?id=<?php echo $id ?>" id="rageEnt"><img src="rage.png" class="img-fluid d-block" alt="Rage Image"></a>
+                    <a href="rage1.php?id=<?php echo $id ?>" id="rageEnt"><img src="rage4.png" class="img-fluid d-block" alt="Rage Image"></a>
 
 
 
@@ -91,18 +91,18 @@ session_start();
 
                 <div class="col-4">
 
-                    <a href="neutre1.php?id=<?php echo $id ?>" id="neutreEnt"><img src="neutre.png" class="img-fluid d-block" alt="Rage Image"></a>
+                    <a href="neutre1.php?id=<?php echo $id ?>" id="neutreEnt"><img src="neutre4.png" class="img-fluid d-block" alt="Rage Image"></a>
 
                 </div>
 
                 <div class="col-4">
 
-                    <a href="yes2.php?id=<?php echo $id ?>" id="yesEnt"><img src="yes.png" class="img-fluid d-block" alt="Rage Image"></a>
+                    <a href="yes2.php?id=<?php echo $id ?>" id="yesEnt"><img src="yes4.png" class="img-fluid d-block" alt="Rage Image"></a>
 
                 </div>
 
             </div>
-            
+
         </div>
 
 

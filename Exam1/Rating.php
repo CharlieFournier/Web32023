@@ -81,17 +81,17 @@ session_start();
     <div class="row h-100 align-items-center">
         <div class="col-4">
             <a href="rage.php?id=<?php echo $id ?>" id="rage">
-                <img src="rage.png" class="img-fluid d-block" alt="Rage Image">
+                <img src="rage4.png" class="img-fluid d-block" alt="Rage Image">
             </a>
         </div>
         <div class="col-4">
             <a href="neutre.php?id=<?php echo $id ?>" id="neutre">
-                <img src="neutre.png" class="img-fluid d-block" alt="Neutre Image">
+                <img src="neutre4.png" class="img-fluid d-block" alt="Neutre Image">
             </a>
         </div>
         <div class="col-4">
             <a href="yes.php?id=<?php echo $id ?>" id="yes">
-                <img src="yes.png" class="img-fluid d-block" alt="Yes Image">
+                <img src="yes4.png" class="img-fluid d-block" alt="Yes Image">
             </a>
         </div>
     </div>
