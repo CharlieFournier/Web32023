@@ -69,7 +69,7 @@ session_start();
 
         if ($erreur == false) {
 
-            $sql = "UPDATE `user` SET `user` = '$user', `email` = '$email', `password` = '$password', `ip` = '$ip' WHERE id = $id";
+            $sql = "UPDATE `user` SET `user` = '$user', `email` = '$email', `password` = '$password', `ip` = '$ip' WHERE `user`.`id` = $id;";
 
             if ($conn->query($sql) === TRUE) {
                 echo "mise a jour effectuee correctement";
@@ -143,6 +143,8 @@ session_start();
                         </div>
                         <div class="col-md-4">
                             <input type="submit">
+                            <a href="DeleteEvents.php?id=<?php echo $row["id"] ?>" style="text-decoration: none;"> <button class="btn-index btn-modif"> Supprimer </button> </a>
+
                         </div>
                         <span style="color:red" ;><?php echo $nomErreur; ?></span><br>
 
