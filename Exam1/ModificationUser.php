@@ -143,7 +143,7 @@ session_start();
                         </div>
                         <div class="col-md-4">
                             <input type="submit">
-                            <a href="DeleteEvents.php?id=<?php echo $row["id"] ?>" style="text-decoration: none;"> <button class="btn-index btn-modif"> Supprimer </button> </a>
+                            <a href="DeleteUser.php?id=<?php echo $row["id"] ?>" style="text-decoration: none;"> <button class="btn-index btn-modif"> Supprimer </button> </a>
 
                         </div>
                         <span style="color:red" ;><?php echo $nomErreur; ?></span><br>
