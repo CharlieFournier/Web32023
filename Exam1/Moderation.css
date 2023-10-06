@@ -75,3 +75,16 @@ body, html {
 .background-details2 {
     background-color: #082d74;
 }
+.btn-custom {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    background-color: white
+}
+
+.btn-custom:active {
+    transform: scale(0.96);
+}

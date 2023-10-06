@@ -59,7 +59,7 @@ html {
     background-color: #007bff;
     color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 12px;
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;

@@ -59,7 +59,7 @@ html {
     border-radius: 1px;
     display: inline-block;
     transition: transform 0.2s, background-color 0.3s;
-    background-color: beige
+    background-color: white
 }
 
 .btn-custom:active {

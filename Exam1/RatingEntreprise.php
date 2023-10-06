@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="Moderation.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 </head>
@@ -62,62 +62,63 @@ session_start();
     }
     if ($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
     ?>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
-            <div class="container-fluid navbar p-0">
+        <div class="container-fluid h-100 p-0 text-center">
+            <div class="col-12 h-1 background-details navbarHeader"></div>
+            <div class="row h-100">
+                <div class="col-12" style="padding-left: 40px;">
+                    <div class="container-fluid p-0 h-100">
+                        <div class="row h-100">
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-0">
+                                <div class="container-fluid navbar p-0">
+                                    <a class="navbar-brand p-0" href="https://www.cegeptr.qc.ca/" target="_blank"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                            <a href="index.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Connexion</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                            <div class="col-9 h-100 text-start card card-conteneur p-0 navbarHeader2" id="cardEvent1">
+                                <div class="col-12 card card-event-design">
+                                    <h1 id="text-event"> Veuillez nous evaluer </h1>
+                                </div>
+                                <div class="container-fluid align-items-center text-center h-100">
+                                    <div class="row h-100 align-items-center">
+                                        <div class="col-4">
+                                            <a href="rage.php?id=<?php echo $id ?>" id="rageEnt">
+                                                <img src="rage4.png" class="img-fluid d-block btn-custom" alt="Rage Image">
+                                            </a>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="neutre.php?id=<?php echo $id ?>" id="neutreEnt">
+                                                <img src="neutre4.png" class="img-fluid d-block btn-custom" alt="Neutre Image">
+                                            </a>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="yes.php?id=<?php echo $id ?>" id="yesEnt">
+                                                <img src="yes4.png" class="img-fluid d-block btn-custom" alt="Yes Image">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <a class="navbar-brand p-0" href="https://www.cegeptr.qc.ca/" target="_blank"><img src="Cegep3rLogo.jpg" id="logoNavBar"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a href="index.php" class="btn" role="button" id="lienAjout"><button type="button" id="btnConnexion">Connexion</button></a>
-                    </div>
-                </div>
-            </div>
-        </nav>
 
-        <div class="container-fluid align-items-center text-center h-100">
+                        <?php
+                    }
 
-            <div class="row h-100 align-items-center">
+                    function test_input($data)
+                    {
+                        $data = trim($data);
+                        $data = addslashes($data);
+                        $data = htmlspecialchars($data);
+                        return $data;
+                    }
 
-                <div class="col-4">
-
-                    <a href="rage1.php?id=<?php echo $id ?>" id="rageEnt"><img src="rage4.png" class="img-fluid d-block" alt="Rage Image"></a>
-
-
-
-                </div>
-
-                <div class="col-4">
-
-                    <a href="neutre1.php?id=<?php echo $id ?>" id="neutreEnt"><img src="neutre4.png" class="img-fluid d-block" alt="Rage Image"></a>
-
-                </div>
-
-                <div class="col-4">
-
-                    <a href="yes2.php?id=<?php echo $id ?>" id="yesEnt"><img src="yes4.png" class="img-fluid d-block" alt="Rage Image"></a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-    <?php
-    }
-
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = addslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    ?>
+                        ?>
 
 
 </body>
