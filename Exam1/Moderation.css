@@ -52,3 +52,7 @@ body, html {
     background-color: #f2f5fb;
     border-radius: 35px;
 }
+
+.btn-index {
+    height: 100%;
+}
