@@ -1,71 +1,53 @@
-<?php
-session_start();
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="Style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
-    <?php
+<div class="col-9 test1">
 
-    $nom = $image = "";
+<a href="AjoutEvents.php"> <button class="btn-index"> Ajout Events </button> </a>
 
+<div class="row p-0 align-items-center">
 
-    $nomErreur = "";
+    <?php while ($row = $result2->fetch_assoc()) { ?>
+        <div class="col-4">
+            <a href="modificationEvents.php?id=<?php echo $row["id"] ?>" id="Link">
 
+                <div class="card">
+                    <div>
+                        <h2><?php echo $row["nomEvent"] ?></h2>
+                    </div>
+                </div>
 
-    $erreur = false;
+            </a>
+        </div>
+    <?php    } ?>
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        //Si on entre, on est dans l'envoie du formulaire
-        
-        if(empty($_POST['nom'])){
-            $nomErreur = "Le nom est requis";
-            $erreur = true;
-        }
-        else{
-            $nom = test_input($_POST["nom"]); 
-        }
-        $image = test_input($_POST["image"]);
+</div>
 
 
-        // Inserer dans la base de données
-        //SI erreurs, on réaffiche le formulaire 
-    }
-    if($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {
+</div>
+
+//---------------------------------------------------------------------------------------------------------------------
+
+<div class="col-3 ">
+
+<a href="AjoutUser.php"> <button class="btn-index"> Ajout User </button> </a>
+
+<div class="row p-0 align-items-center">
+
+    <?php while ($row = $result->fetch_assoc()) { ?>
+        <div class="col-4">
+            <a href="modificationUser.php?id=<?php echo $row["id"] ?>" id="Link">
+
+                <div class="card">
+                    <div>
+                        <h2><?php echo $row["user"] ?></h2>
+                    </div>
+                </div>
+
+            </a>
+        </div>
+    <?php    } ?>
+
+</div>
 
 
-    ?>
+</div>
 
-    
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-            Nom : <input type="text" name="nom" size="25" maxlength="15"><br>
-            <span style="color:red";><?php echo $nomErreur;?></span><br><br>
-            
-            Image : <input type="text" name="image" value="<?php echo $image; ?>"><br>
-
-            <input type="submit">
-        </form>
-
-    <?php  //   UPDATE `evenement` SET `positif` = (positif +1) WHERE `evenement`.`id` = 1
-    }
-
-    function test_input($data){
-        $data = trim($data);
-        $data = addslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    ?>
-
-    
-</body>
-</html>
-
+//-------------------------------------------------------------------------------------------------------------------------
